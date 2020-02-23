@@ -1,2 +1,2 @@
 # site_bouhartsev
-My personal site
+My personal website
