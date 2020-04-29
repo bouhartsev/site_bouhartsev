@@ -148,6 +148,11 @@ hr {
     margin-bottom: 1%;
 }
 
+.broadcast-placeholder {
+    display: flex;
+    justify-content: center;
+}
+
 .broadcast-placeholder > p {
     text-align: center;
     font-style: italic;
