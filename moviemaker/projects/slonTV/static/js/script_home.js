@@ -91,7 +91,6 @@ function Start2() {
     time_events.push(0);
 
     Set_Date();
-    console.log(events[2]);
 
     Check();
 }
@@ -114,15 +113,12 @@ function Check() {
     var element_now = document.getElementById('now');
     var element_next = document.getElementById('next');
     var element_next_next = document.getElementById('next_next');
-
-    console.log(events[0]);
-    console.log(date_now);
     
     if (day1) {
         counter = 0;
         if (time_now < time_events[1] - 5) {
             //трансляция ещё не началась
-            placeholder_text.innerHTML = 'Трансляция ещё не началась. Она пройдёт сегодня на <a href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">этом</a> канале.';
+            placeholder_text.innerHTML = '<p>Трансляция ещё не началась. Она пройдёт сегодня на <a class="golden-link" href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">этом</a> канале.</p>';
             control = 0;
         } else if (time_now < time_events[1]) {
             //трансляция скоро начнётся
@@ -153,7 +149,7 @@ function Check() {
             control = 1;
         } else {
             //трансляция уже закончилась. следующий эфир начнётся завтра
-            placeholder_text.innerHTML = "Трансляция завершилась. Следующий эфир начнётся завтра.";
+            placeholder_text.innerHTML = "<p>Трансляция завершилась. Следующий эфир начнётся завтра.</p>";
             control = 0;
         }
 
@@ -163,7 +159,7 @@ function Check() {
         counter = 0;
         if (time_now < time_events[day1_stop + 2] - 5) {
             //трансляция ещё не началась
-            placeholder_text.innerHTML = 'Трансляция ещё не началась. Она пройдёт сегодня на <a href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">этом</a> канале.';
+            placeholder_text.innerHTML = '<p>Трансляция ещё не началась. Она пройдёт сегодня на <a class="golden-link" href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">этом</a> канале.</p>';
             control = 0;
         } else if (time_now < time_events[day1_stop + 2]) {
             //трансляция скоро начнётся
@@ -194,13 +190,13 @@ function Check() {
             control = 1;
         } else {
             //трансляция уже закончилась.
-            placeholder_text.innerHTML = 'Трансляция завершилась. Смотрите <a href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">здесь</a> запись.';
+            placeholder_text.innerHTML = '<p>Трансляция завершилась. Смотрите <a class="golden-link" href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">здесь</a> запись.</p>';
             control = 0;
         }
     } else {
         //трансляция не происходит
 
-        placeholder_text.innerHTML = 'Трансляция отсутствует. Проверьте программу или смотрите <a href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">здесь</a> запись.';
+        placeholder_text.innerHTML = '<p>Трансляция отсутствует. Проверьте программу или смотрите <a class="golden-link" href="https://www.youtube.com/channel/UCfW0B-pFXXKGEVGfNHhIHcg">здесь</a> запись.</p>';
         control = 0;
     }
 
@@ -215,7 +211,7 @@ function Check() {
         else element_next_next.innerHTML = "";
     } else {
         document.getElementById("broadcast-wrapper").style.display = "none";
-        document.getElementById("broadcast-placeholder").style.display = "block";
+        document.getElementById("broadcast-placeholder").style.display = "flex";
     }
 
     Watch();
