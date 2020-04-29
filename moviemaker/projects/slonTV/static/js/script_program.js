@@ -98,7 +98,7 @@ function Start2() {
     console.log(date_yesterday);
     
     $("#day2").append(temp);
-    
+    counter++;
     
     for (; counter < events.length; counter++) {
         $("#program-list-day2").append('<p>' + events[counter] + '</p>')
