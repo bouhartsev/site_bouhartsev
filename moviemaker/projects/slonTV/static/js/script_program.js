@@ -92,12 +92,8 @@ function Start2() {
     else if (date_yesterday == events[counter]) temp = events[counter] + ' (Вчера)';
     else if (date_tomorrow == events[counter]) temp = events[counter] + ' (Завтра)';
     
-    
-    console.log(date_now);
-    console.log(date_tomorrow);
-    console.log(date_yesterday);
-    
     $("#day2").append(temp);
+    
     counter++;
     
     for (; counter < events.length; counter++) {
