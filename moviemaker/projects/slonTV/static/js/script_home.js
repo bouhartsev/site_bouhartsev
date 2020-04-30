@@ -42,6 +42,7 @@ function load_data() {
         for (var i = 0; i < events.length; i++) localStorage.setItem("events" + i, events[i]);
         localStorage.setItem("last_update", new Date().getTime());
         localStorage.setItem("num_events", events.length);
+        console.log("Update and load data");
 
         Start2();
     });
