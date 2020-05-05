@@ -229,7 +229,7 @@ function Watch() {
 
     if (control) {
         var percent = (time_now - time_event * 60) / (time_next_event * 60 - time_event * 60) * 100;
-        if (percent == 0) percent = 2;
+        if (percent < 5) percent = 5;
         document.getElementById("scale").style.width = percent + "%";
     }
 
@@ -274,6 +274,7 @@ function Timer() {
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
     var time_now = hours * 3600 + minutes * 60 + seconds;
+    let placeholder_text = document.getElementById("broadcast-placeholder");
 
     var difference = time_events[1] * 60 - time_now;
     if (day2) difference = time_events[day1_stop + 2] * 60 - time_now;
