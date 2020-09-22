@@ -1,0 +1,27 @@
+/*
+:root {
+  --text-color: red;
+}
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    font-size: 20px;
+    padding: 0;
+}
+
+.block {
+    width: 100%;
+    font-size: 
+    margin: auto;
+    padding: 10px;
+    color: black;
+    background-color: white;
+}
+
+#about {
+    //
+}
+
