@@ -3,43 +3,27 @@
 }
 
 .header {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-between;
-	
-	text-transform: uppercase;
-	
-	background-image: url("../img/avatar.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-/*	background: linear-gradient(90deg, rgba(237,126,0,1) 40%, rgba(255,250,99,1) 100%);*/
-	background-attachment: fixed;
-	padding: 10px;
+/*    font-size: 2rem;*/
+	color: white;
+    text-shadow: white 0 0 2em;
+    text-shadow: 0 0 2em white, 0 0 0.03em black;
+    
+    background: orange radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);
 }
 
 h1 {
-	height: 20vh;
-	overflow: hidden;
+    padding: 0;
+    margin: 0;
+    
+	height: 30vh;
+    width: 90%;
+
 	display: flex;
 	align-items: center;
-}
-
-.header > ul {
-	padding: 0;
-	margin: 0;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	width: 100%;
-}
-
-.header ul li:hover {	
-	transform: scale(1.25)
-}
-
-li {
-	list-style-type: none;
+    justify-content: center;
+    text-align: center;
+    
+    font-family: 'Alice', serif;
 }
 
 .block {
@@ -59,10 +43,7 @@ li {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
-	
-/*	height: 300px;*/
-	min-height: 150px;
+/*	align-items: center;*/
 	
 	background-color: whitesmoke;
 }
@@ -72,14 +53,19 @@ li {
 	width: 30%;
 	overflow: hidden;
 	margin: 1%;
+    
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
 }	
 
 #about > img {
-	display: block;
-	margin: 1%;
-	float: right;
-	height: 50%;
-	opacity: 30%;
+    padding: 3% 0;
+    margin: 0 1%;
+/*	float: right;*/
+/*    overflow: hidden;*/
+/*    object-fit: contain;*/
+    object-fit: cover;
 }
 
 form {
@@ -89,7 +75,6 @@ form {
 	flex-direction: column;
 /*	justify-content: space-between;*/
 	align-items: center;
-	height: 300px;
 }
 
 fieldset {
@@ -103,6 +88,7 @@ fieldset {
 
 fieldset > div {
 	height: 25%;
+    width: 80%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -113,18 +99,4 @@ fieldset > div {
 textarea {
 	resize: none;
 	width: auto;
-}
-
-.footer {
-	box-sizing: border-box;
-	height: 10vh;
-	width: 100%;
-	padding: 0 25% 0 25%;
-	margin: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	
-	background-color: aquamarine;
 }
