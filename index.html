@@ -29,11 +29,12 @@
     
     <!--    Styles-->
     <link rel="stylesheet" href="source/style/who.css">
+    <link rel="stylesheet" href="/source/style/main.css">
     
     
 </head>
 <body>
-    <div style="width: 100%; height: 100vh; font-size: 50px;">Здесь появится сайт <a href="https://vk.com/bouhartsev">Матвея Бухарцева</a></div>
+    <div style="width: 100%; height: 100vh; font-size: 50px; padding: 30px; box-sizing: border-box;">Здесь появится сайт <a href="https://vk.com/bouhartsev">Матвея Бухарцева</a></div>
     
     <noscript>
     	Ваш браузер на <a href="https://enable-javascript.com/ru">поддерживает</a> скрипты! <br> Your browser does not <a href="https://enable-javascript.com/ru">support</a> JavaScript!
@@ -49,9 +50,11 @@
   
     <div class="main">
     <div class="block" id="about">
+       <div id="about_text">
         <p><strong>Матвей Бухарцев</strong> - российский программист и автор видео. Имеет опыт веб-разработки и создания программного обеспечения более чем на 10 различных языках. С 2020 года является студентом Московского Политехнического университета.</p>
         <p>Матвей социально активный и творческий человек. На протяжении обучения в школе участвовал во множестве соревнований, в том числе во Всероссийской олимпиаде школьников и Чемпионате по чтению вслух среди старшеклассников "Страница". Закончил музыкальную школу и школу программистов.</p>
-        <img src="source/img/avatar.jpg" alt="Фотография Матвея Бухарцева">
+       </div>
+       <img src="source/img/avatar.jpg" alt="Фотография Матвея Бухарцева" id="imgAva">
     </div>
     <div class="block" id="resume">
         <h2>Резюме</h2>
@@ -62,10 +65,24 @@
         //.
         <form>
         	<h3>Напишите мне:</h3>
-        	<input type="email" name="email" placeholder="Ваша электронная почта">
-        	<input type="text" name="subject" placeholder="Тема письма">
-        	<textarea name="textbox" placeholder="Сообщение"></textarea>
-        	<input type="submit" value="Отправить">
+        	<fieldset>
+        	<div>
+				<label for="formEmail">Почта:</label>
+				<input type="email" name="email" id="formEmail" placeholder="Ваша электронная почта">
+        	</div>
+        	<div>
+				<label for="formSubject">Тема обращения:</label>
+        		<input type="text" name="subject" id="formSubject" placeholder="О чём будет письмо?">
+        	</div>
+        	<div>
+				<label for="formTextbox">Письмо:</label>
+				<textarea name="textbox" id="formTextbox" placeholder="Текст сообщения"></textarea>
+        	</div>
+        	<div>
+        		<input type="submit" value="Отправить">
+        		<input type="reset" value="Очистить">
+        	</div>
+        	</fieldset>
         </form>
     </div>
 

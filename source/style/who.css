@@ -1,45 +1,41 @@
-/*
 :root {
-  --text-color: red;
-}
-*/
-
-html {
-	width: 100%;
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
-}
-
-body {
-	width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-	padding: 0px;
-    font-size: 20px;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
+  --text_height: 300px;
 }
 
 .header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: flex-between;
 	
 	text-transform: uppercase;
+	
+	background-image: url("../img/avatar.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+/*	background: linear-gradient(90deg, rgba(237,126,0,1) 40%, rgba(255,250,99,1) 100%);*/
+	background-attachment: fixed;
+	padding: 10px;
 }
 
-.header ul {
+h1 {
+	height: 20vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+.header > ul {
 	padding: 0;
 	margin: 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	width: 100%;
+}
+
+.header ul li:hover {	
+	transform: scale(1.25)
 }
 
 li {
@@ -60,15 +56,58 @@ li {
 }
 
 #about {
-    background-color: whitesmoke;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	
+/*	height: 300px;*/
+	min-height: 150px;
+	
+	background-color: whitesmoke;
+}
+
+#about > div {
+	text-align: end;
+	width: 30%;
+	overflow: hidden;
+	margin: 1%;
+}	
+
+#about > img {
+	display: block;
+	margin: 1%;
+	float: right;
+	height: 50%;
+	opacity: 30%;
 }
 
 form {
+	/*	display: none;*/
+	
+	display: flex;
+	flex-direction: column;
+/*	justify-content: space-between;*/
+	align-items: center;
+	height: 300px;
+}
+
+fieldset {
+	width: 30%;
 	height: 200px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+fieldset > div {
+	height: 25%;
+	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+/*	margin: 10px;*/
 }
 
 textarea {
@@ -76,3 +115,16 @@ textarea {
 	width: auto;
 }
 
+.footer {
+	box-sizing: border-box;
+	height: 10vh;
+	width: 100%;
+	padding: 0 25% 0 25%;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	
+	background-color: aquamarine;
+}
