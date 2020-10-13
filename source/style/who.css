@@ -3,11 +3,12 @@
 }
 
 .header {
-/*    font-size: 2rem;*/
+/*    font-size: 1.2em;*/
 	color: white;
     text-shadow: white 0 0 2em;
     text-shadow: 0 0 2em white, 0 0 0.03em black;
     
+/*    background: orange linear-gradient(#FA9026, #FFFFFF);*/
     background: orange radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);
 }
 
@@ -68,6 +69,17 @@ h1 {
     object-fit: cover;
 }
 
+#contacts div {
+/*    Для нормальной работы */
+/*    display: inline-block;*/
+    
+    word-wrap: break-word;
+    column-count: 3;
+    column-width: 300px;
+    column-gap: normal;
+    column-rule: 1px solid #ccc;
+}
+
 form {
 	/*	display: none;*/
 	
@@ -96,7 +108,47 @@ fieldset > div {
 /*	margin: 10px;*/
 }
 
+input[type="submit"] {
+    transition: transform 1s ease-in;
+}
+
+input[type="submit"]:hover {
+    transform: rotateX(360deg);
+}
+
+input[type="reset"]:hover {
+    animation: inputteam 1s 1 linear;
+}
+
+@keyframes inputteam {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, 20px, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 textarea {
 	resize: none;
 	width: auto;
+}
+
+textarea:focus {
+    animation: inputteam2 1.1s infinite ease;
+}
+
+@keyframes inputteam2 {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.01, 1.01, 2);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }
