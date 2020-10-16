@@ -7,6 +7,10 @@
 /*    Local import*/
 }
 
+:root {
+  --color-white: whitesmoke;
+}
+
 html {
     font-family: 'Commissioner', sans-serif;
 	width: 100%;
@@ -35,6 +39,8 @@ body {
     background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
+    
+    z-index: 3000;
 }
 
 .header > ul {
@@ -53,6 +59,18 @@ body {
 .header ul li {
 	list-style-type: none;
     transition: transform 0.2s ease-in-out;
+}
+
+.headerFixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 10vh;
+    flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 }
 
 a {
@@ -75,42 +93,44 @@ a {
 	justify-content: space-around;
 	align-items: center;
 	
-    color: whitesmoke;
+    color: var(--color-white);
 	background-color: #2C2C2C;
 }
 
-/*
-.footer > a:after {
-    display: block;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 3px;
-    left: 50%;
-    bottom: 0;
-    background: red;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-}
-*/
-
-.footer a {
+.footer>a {
     display: inline-block;
     position: relative;
 }
 
-.footer a ::after {
-/*    display: block;*/
-    content: "123";
-    background-color: red;
-    color: red;
-    height: 20px;
+.footer>a::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0.05em;
+    left: 50%;
+    bottom: 0;
+    background: var(--color-white);
+    transition: width 0.2s ease-in-out;
 }
 
-/*
-.footer > a :before :hover {
+.footer>a::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0.05em;
+    left: 50%;
+    bottom: 0;
+    background: var(--color-white);
+    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+.footer>a:hover::before {
     width: 50%;
     left: 0;
 }
-.footer > a :after :hover {
+
+.footer>a:hover::after {
     width: 50%;
-}*/
+}
