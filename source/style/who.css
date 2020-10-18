@@ -1,40 +1,32 @@
 .header {
-/*    font-size: 1.2em;*/
+    font-size: 1.1em;
 	color: white;
-    text-shadow: white 0 0 2em;
     text-shadow: 0 0 2em white, 0 0 0.03em black;
     
 /*    background: orange linear-gradient(#FA9026, #FFFFFF);*/
     background: orange radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);
 }
 
-.header h1 {
-    padding: 0;
-    margin: 0;
-    
-	height: 30vh;
-    width: 90%;
-
-	display: flex;
-	align-items: center;
-    justify-content: center;
-    text-align: center;
-    
+.header>h1 {
     font-family: 'Alice', serif;
 }
 
-.headerFixed h1 {
+
+.headerFixed>h1 {
     font-size: 1.3em;
+    width: 40% !important;
+}
+
+.headerFixed ul {
+    width: 60% !important;
 }
 
 .block {
-	box-sizing: border-box;
-	padding: 10px;
-    
-	width: 100%;
-	margin: 0px;
-	
-    font-size: 1em;
+/*    Для якорных ссылок: сдвиг на высоту меню.*/
+/*                                                                        Раскомментировать на прод↓*/
+    border-top: 10vh solid transparent;
+    margin-top: -10vh;
+    background-clip: padding-box;
     
     color: black;
     background-color: white;
@@ -54,11 +46,16 @@
 	width: 30%;
 	overflow: hidden;
 	margin: 1%;
+    padding-bottom: 1em;
     
     display: flex;
 	flex-direction: column;
 	justify-content: center;
 }	
+
+#about p {
+    margin-bottom: 0; 
+}
 
 #about > img {
     padding: 3% 0;
@@ -67,6 +64,67 @@
 /*    overflow: hidden;*/
 /*    object-fit: contain;*/
     object-fit: cover;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+}
+
+#contacts table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#contacts td:first-child {
+    text-align: end;
+}
+
+#contacts td:first-child::after {
+    content: "-";
+    margin: 0 0.5em;
+}
+
+#contacts a {
+    color: slateblue;
+    display: inline-block;
+    position: relative;
+}
+
+#contacts a::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0.05em;
+    left: 50%;
+    bottom: 0;
+    background: slateblue;
+    transition: width 0.2s ease-in-out;
+}
+
+#contacts a::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0.05em;
+    left: 50%;
+    bottom: 0;
+    background: slateblue;
+    transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+#contacts a:hover::before {
+    width: 50%;
+    left: 0;
+}
+
+#contacts a:hover::after {
+    width: 50%;
 }
 
 .polylabs div {
