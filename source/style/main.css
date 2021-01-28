@@ -61,7 +61,7 @@ body {
 }
 
 .header ul li:hover {
-	transform: scale(1.25);
+	transform: scale(1.1);
 }
 
 .header>h1 {
