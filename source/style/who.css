@@ -87,13 +87,14 @@ h2 {
     margin: 0 0.5em;
 }
 
-#contacts a {
-    color: slateblue;
+#contacts a, #cv a {
+    color: blue;
     display: inline-block;
     position: relative;
+	transition: color 0.2s ease-in-out;
 }
 
-#contacts a::after {
+#contacts a::after, #cv a::after {
     display: block;
     position: absolute;
     content: "";
@@ -101,11 +102,11 @@ h2 {
     height: 0.05em;
     left: 50%;
     bottom: 0;
-    background: slateblue;
+    background-color: currentColor;
     transition: width 0.2s ease-in-out;
 }
 
-#contacts a::before {
+#contacts a::before, #cv a::before {
     display: block;
     position: absolute;
     content: "";
@@ -113,15 +114,56 @@ h2 {
     height: 0.05em;
     left: 50%;
     bottom: 0;
-    background: slateblue;
+    background-color: currentColor;
     transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
 }
 
-#contacts a:hover::before {
+#contacts a:hover, #cv a:hover, #contacts a:active, #cv a:active {
+	color: darkblue;
+}
+
+#contacts a:hover::before, #cv a:hover::before {
     width: 50%;
     left: 0;
 }
 
-#contacts a:hover::after {
+#contacts a:hover::after, #cv a:hover::after {
     width: 50%;
+}
+
+#cv ul {
+	list-style: none;
+	padding: 0;
+	width: fit-content;
+	margin: auto;
+}
+
+#cv li {
+	position: relative;
+	line-height: 1.5em;
+}
+
+#cv li::before {
+	content: "";
+	width: 1em;
+	height: 1.25em;
+	margin-right: 0.3em;
+	position: relative;
+	display: inline-block;
+	background: url('/source/img/file.svg') no-repeat;
+	background-size: 100% auto;
+	background-position: bottom;
+	vertical-align: top;
+}
+
+#cv li::after {
+	display: inline;
+	content: attr(data-cv-lang);
+	font-size: 0.5em;
+	vertical-align: text-top;
+	color: var(--color-white);
+	background-color: lightslategray;
+	margin-left: 0.3em;
+	padding: 0.2em;
+	border-radius: 0.3em;
 }

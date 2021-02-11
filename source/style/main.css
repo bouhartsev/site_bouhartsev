@@ -8,7 +8,10 @@
 }
 
 :root {
-  --color-white: whitesmoke;
+	--color-white: whitesmoke;
+	--size-pc: 1400px;
+	--size-tablet: 900px;
+	--size-phone: 200px;
 }
 
 html {
