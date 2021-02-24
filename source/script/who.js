@@ -5,7 +5,8 @@ function NotReady() {
     document.body.prepend(NotReadyDiv);
 }
 
+$(window).ready(Load);
 function Load() {
     console.log("Load");
-    NotReady();
+//    NotReady();
 }

@@ -1,6 +1,3 @@
-var heightHeaderFixed=0.1;
-var toBurgerWidth = 1000;
-
 $(window).scroll(HeaderOnScroll);
 
 function HeaderOnScroll() {

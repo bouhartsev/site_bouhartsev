@@ -1,6 +1,6 @@
 header {
-	color: white;
-    text-shadow: 0 0 2em white, 0 0 0.03em black;
+	color: var(--color-white);
+    text-shadow: 0 0 2em var(--color-white), 0 0 0.03em var(--color-black);
     
 /*    background: orange linear-gradient(#FA9026, #FFFFFF);*/
     background: orange radial-gradient(circle, #F9A72B 0%, #FA9026 70%, #FB6C1F 100%);
@@ -13,23 +13,15 @@ header>h1 {
 
 .headerFixed>h1 {
     font-size: 1.3em;
-    width: 40% !important;
-}
-
-.headerFixed ul {
-    width: 60% !important;
 }
 
 section {
 /*    Для якорных ссылок: сдвиг на высоту меню.*/
     border-top: 10vh solid transparent;
     margin-top: -10vh;
-    background-clip: padding-box;
-    
+
     color: black;
     background-color: white;
-
-	max-width: 100vw;
 }
 
 #about {
@@ -69,10 +61,6 @@ section {
 	max-width: 500px;
 	min-width: 0;
 /*	Можно попробовать на ПК привязать sticky*/
-}
-
-h2 {
-    text-align: center;
 }
 
 #contacts table {
