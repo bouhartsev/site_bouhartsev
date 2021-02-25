@@ -8,5 +8,5 @@ function NotReady() {
 $(window).ready(Load);
 function Load() {
     console.log("Load");
-//    NotReady();
+	NotReady();
 }

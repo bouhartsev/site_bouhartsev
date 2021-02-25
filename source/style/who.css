@@ -77,14 +77,14 @@ section {
     margin: 0 0.5em;
 }
 
-#contacts a, #cv a {
+.link_uni {
     color: blue;
     display: inline-block;
     position: relative;
 	transition: color var(--transition-time);
 }
 
-#contacts a::after, #cv a::after {
+.link_uni::after, .link_uni::after {
     display: block;
     position: absolute;
     content: "";
@@ -96,7 +96,7 @@ section {
     transition: width var(--transition-time);
 }
 
-#contacts a::before, #cv a::before {
+.link_uni::before, .link_uni::before {
     display: block;
     position: absolute;
     content: "";
@@ -108,16 +108,16 @@ section {
     transition: width var(--transition-time), left var(--transition-time);
 }
 
-#contacts a:hover, #cv a:hover, #contacts a:active, #cv a:active {
+.link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
 	color: darkblue;
 }
 
-#contacts a:hover::before, #cv a:hover::before {
+.link_uni:hover::before, .link_uni:hover::before {
     width: 50%;
     left: 0;
 }
 
-#contacts a:hover::after, #cv a:hover::after {
+.link_uni:hover::after, .link_uni:hover::after {
     width: 50%;
 }
 
