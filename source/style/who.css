@@ -15,6 +15,12 @@ header>h1 {
     font-size: 1.3em;
 }
 
+.header__burger::before,
+.header__burger::after,
+.header__burger span {
+	background-color: var(--color-white);
+}
+
 section {
 /*    Для якорных ссылок: сдвиг на высоту меню.*/
     border-top: 10vh solid transparent;

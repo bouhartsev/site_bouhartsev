@@ -12,8 +12,14 @@ header>h1 {
 	font-size: 1.9em;
 }
 
-.headerFixed>h1 {
+.headerFixed h1 {
     font-size: 1.2em;
+}
+
+.header__burger::before,
+.header__burger::after,
+.header__burger span {
+	background-color: var(--color-black);
 }
 
 section {
