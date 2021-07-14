@@ -31,7 +31,7 @@ $(document).ready(function() {
     }
 
     function clickBurger() {
-        $(".header__burger, header nav, header nav ul").toggleClass('burger-active', Number(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').split(' ')[1].slice(0,-1))*1000);
+        $(".header__burger, header nav, header nav ul, body").toggleClass('burger-active', Number(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').split(' ')[1].slice(0,-1))*1000);
     }
 
     function NotReady() {
@@ -45,7 +45,7 @@ $(document).ready(function() {
     }
 
     console.log("Load");
-	NotReady();
+	// NotReady();
 
     isBurger();
     $(window).resize(isBurger);

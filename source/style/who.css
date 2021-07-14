@@ -69,18 +69,31 @@ section {
 /*	Можно попробовать на ПК привязать sticky*/
 }
 
-#contacts table {
+#contacts .table {
     margin: auto;
-    border-collapse: collapse;
+	overflow-x: hidden;
+	
+	width: 100%;
 }
 
-#contacts td:first-child {
-    text-align: end;
+#contacts .table>* {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
 
-#contacts td:first-child::after {
+#contacts span:nth-child(2) {
+	flex-basis: 50%;
+}
+
+#contacts span:nth-child(2) {
+	white-space: nowrap;
+}
+
+#contacts span:nth-child(2)::before {
     content: "-";
     margin: 0 0.5em;
+	
 }
 
 .link_uni {
@@ -167,5 +180,11 @@ section {
 @media (max-width: 1024px) {
 	#about p {
 		text-align: center;
+	}
+
+	#contacts .table>* {
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 1em;
 	}
 }
