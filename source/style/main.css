@@ -1,10 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Alice&family=Amatic+SC:wght@400;700&family=Caveat:wght@400;700&family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Alice&family=Amatic+SC:wght@400;700&family=Caveat:wght@400;700&family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
 
 /*Неиспользованный:*/
 /*font-family: 'Amatic SC', cursive;*/
 
+/*    Local fonts import*/
 @font-face {
-/*    Local import*/
+	font-family: 'Alice';
+	src: url('/source/fonts/Alice/Alice-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Caveat';
+	src: url('/source/fonts/Caveat/Caveat-Regular.ttf') format('truetype');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Caveat';
+	src: url('/source/fonts/Caveat/Caveat-Bold.ttf') format('truetype');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Commissioner';
+	src: url('/source/fonts/Commissioner/Commissioner-VariableFont_wght.ttf') format('truetype');
 }
 
 :root {
@@ -26,15 +45,19 @@ html {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+	font-size: 1.5em;
 }
 
 body {
-	width: 100%;
+	width: 100vw;
     display: flex;
     flex-direction: column;
     margin: 0px;
 	padding: 0px;
-    font-size: 30px;
+	overflow-y: overlay;
+	overflow-x: hidden;
 }
 
 header {
@@ -257,7 +280,7 @@ footer>a:hover::after {
 		right: 0;
 		z-index: 2;
 	
-		margin-right: 20px;
+		margin-right: 30px;
 		/* margin-top: -50%; */
 
 		width: 30px;
@@ -337,26 +360,38 @@ footer>a:hover::after {
 	nav ul:not(.burger-active) {
 		opacity: 0;
 	}
+
+	body.burger-active {
+		overflow: hidden;
+	}
+
 }
 @media (max-width: 425px) {
+	html {
+		font-size: 1.3em;
+	}
 	#copyright {
 		font-size: 0.9em;
 	}
 }
 @media (max-width: 320px) {
+	h1 {
+		opacity: 0;
+	}
+
 	footer {
-		font-size: 0.6em;
+		font-size: 0.8em;
 	}
 }
 
 @media (min-width: 2000px) {
 	body {
-		font-size: 40px;
+		font-size: 2em;
 	}
 }
 
 @media (min-width: 4000px) {
 	body {
-		font-size: 60px;
+		font-size: 3em;
 	}
 }
