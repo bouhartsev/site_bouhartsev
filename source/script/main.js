@@ -45,7 +45,7 @@ $(document).ready(function() {
     }
 
     console.log("Load");
-	// NotReady();
+	NotReady();
 
     isBurger();
     $(window).resize(isBurger);
