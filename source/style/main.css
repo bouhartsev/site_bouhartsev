@@ -271,7 +271,8 @@ footer>a:hover::after {
 
 @media (max-width: 768px) {
 	header h1 {
-		width: 100%;
+		width: calc(100% - 150px);
+		margin: auto;
 	}
 
 	.header__burger {
@@ -368,17 +369,13 @@ footer>a:hover::after {
 }
 @media (max-width: 425px) {
 	html {
-		font-size: 1.3em;
+		font-size: 1em;
 	}
 	#copyright {
 		font-size: 0.9em;
 	}
 }
 @media (max-width: 320px) {
-	h1 {
-		opacity: 0;
-	}
-
 	footer {
 		font-size: 0.8em;
 	}
