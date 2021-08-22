@@ -23,8 +23,23 @@ header>h1 {
 }
 
 section {
+	padding-left: 5%;
+	padding-right: 5%;
+
 	color: var(--color-white);
 	background-color: var(--color-black);
+}
+
+.about {
+	flex-direction: row-reverse;
+}
+
+.link_uni {
+    color: rgb(0, 185, 255);
+}
+
+.link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
+	color: rgb(83, 209, 255);
 }
 
 table {
