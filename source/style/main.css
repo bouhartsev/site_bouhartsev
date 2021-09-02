@@ -72,7 +72,7 @@ header {
 	background-size: cover;
 	background-attachment: fixed;
     
-    z-index: 100;
+    z-index: 100001;
 	font-size: 1.1em;
 }
 
@@ -147,6 +147,44 @@ a {
 	-webkit-tap-highlight-color: transparent;
 }
 
+.link_uni {
+    display: inline-block;
+    position: relative;
+	transition: color var(--transition-time);
+}
+
+.link_uni::after, .link_uni::after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0.05em;
+    left: 50%;
+    bottom: 0;
+    background-color: currentColor;
+    transition: width var(--transition-time);
+}
+
+.link_uni::before, .link_uni::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0.05em;
+    left: 50%;
+    bottom: 0;
+    background-color: currentColor;
+    transition: width var(--transition-time), left var(--transition-time);
+}
+
+.link_uni:hover::before, .link_uni:hover::before {
+    width: 50%;
+    left: 0;
+}
+
+.link_uni:hover::after, .link_uni:hover::after {
+    width: 50%;
+}
 
 h2 {
     text-align: center;
@@ -162,6 +200,42 @@ section {
 	margin: 0px;
 	
     font-size: 1em;
+}
+
+
+.about {
+	display: flex;
+	justify-content: center;
+/*	align-items: center;*/ /* Мешает правильному вписыванию изображения */
+	flex-wrap: wrap-reverse;
+
+	position: relative;
+	height: fit-content;
+}
+
+.about > div {
+	min-width: 30%;
+	width: 500px;
+	max-width: 100%;
+	overflow: hidden;
+	margin: 1%;
+    padding-bottom: 1em;
+	align-self: center;
+}	
+
+.about p {
+    margin-bottom: 0; 
+}
+
+.about > img {
+    padding: 3% 0;
+    margin: 0 1%;
+    object-fit: cover;
+/*    object-fit: contain;*/
+	flex-grow: 0.3;
+	max-width: 500px;
+	min-width: 0;
+/*	Можно попробовать на ПК привязать sticky*/
 }
 
 footer {

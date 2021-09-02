@@ -23,9 +23,61 @@ header>h1 {
 }
 
 section {
+	padding-left: 5%;
+	padding-right: 5%;
+
 	color: var(--color-white);
 	background-color: var(--color-black);
 }
+
+.about {
+	flex-direction: row-reverse;
+}
+
+.link_uni {
+    color: rgb(0, 185, 255);
+}
+
+.link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
+	color: rgb(83, 209, 255);
+}
+
+#facets {
+	text-align: center;
+	font-size: 3.5vw;
+	position: relative;
+	margin: -1px 0;
+	padding: 2em;
+}
+
+#facets::before {
+	content: '';
+	position: absolute;
+	top: 1em;
+	left: 10%;
+	right: 10%;
+	height: calc(100% - 4em);
+	padding: 1em;
+	border: 3px var(--color-white) dashed;
+	border-radius: 15px;
+}
+
+/* #typewriter::after {
+	content: '|';
+	animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+} */
 
 table {
 	margin: auto;

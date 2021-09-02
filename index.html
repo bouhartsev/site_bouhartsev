@@ -61,16 +61,16 @@
     <!--    libraries-->
     <script src="/source/libs/jquery.js" type="text/javascript"></script>
     <script src="/source/libs/jquery-ui-custom.js" type="text/javascript"></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script>
     
     <!--    Scripts-->
     <script src="/source/script/main.js" type="text/javascript"></script>
     <script src="/source/script/who.js" type="text/javascript"></script>
     
-    <!--    Metrics-->
+    <!--    Metrics and verification-->
     <meta name="google-site-verification" content="WZhOS4eFmA4cJTmDQd04ej9GMAB68xSIcK0DCRKKgg4" />
     <meta name="yandex-verification" content="f1542c36dd6b3a82" />
-	
-	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript" >
 	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
 	   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -82,15 +82,16 @@
 		accurateTrackBounce:true
 	   });
 	</script>
-	<noscript><div><img src="https://mc.yandex.ru/watch/72355396" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-	<!-- /Yandex.Metrika counter -->
-    <!--    Метрики-->
+
 </head>
 
 <body>
-    <noscript>
-    	Ваш браузер не <a href="https://enable-javascript.com/ru">поддерживает</a> скрипты! <br> Your browser does not <a href="https://enable-javascript.com/ru">support</a> JavaScript!
-    </noscript>
+    <noindex>
+        <noscript><div><img src="https://mc.yandex.ru/watch/72355396" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <noscript>
+            Ваш браузер не <a href="https://enable-javascript.com/ru">поддерживает</a> скрипты! <br> Your browser does not <a href="https://enable-javascript.com/ru">support</a> JavaScript!
+        </noscript>
+    </noindex>
     
     <header>
         <h1><a href="/">Матвей Бухарцев - это</a></h1>
@@ -107,14 +108,13 @@
     </header>
 
     <main>
-    <section id="about">
+    <section id="about" class="about">
        <div id="about_text">
         <p><strong>Матвей Бухарцев</strong> - российский программист и автор видео. Имеет опыт веб-разработки и создания программного обеспечения более чем на 10 различных языках. Выпустился из школы с красным аттестатом и двумя золотыми медалями. С 2020 года является студентом Московского Политехнического университета.</p>
         <p>Кроме того, Матвей закончил музыкальную школу и школу программистов с отличием. В 3 года Матвей стал человеком года по версии журнала "Time".</p>
         <p> На сегодняшний день основным занятием Матвея Бухарцева является разработка, однако он не забросил свои хобби. Следить за деятельностью Матвея можно в <a href="#contacts" class="link_uni">социальных сетях</a>.</p>
-<!--        Наладить стиль ссылки-->
        </div>
-       <img src="source/img/avatar.jpg" alt="Фотография Матвея Бухарцева" id="imgAva">
+       <img src="/source/img/avatar.jpg" alt="Фотография Матвея Бухарцева" id="imgAva">
     </section>
     
 <!--    Заменить тире на иконки, придумать адаптив-->
@@ -181,6 +181,17 @@
 			<li data-cv-lang="EN"><a href="!!!" class="link_uni">Резюме (автор видео)</a></li>
    		</ul>
     </section>
+
+    <section id="news">
+        <h2>Последние новости</h2>
+        <!-- Social media -->
+        <div class="feed-block">
+            <div id="vk_feed" class="sm-feed"></div>
+            <div class="sm-feed2"><div class="elfsight-app-986a812f-c5d1-4aba-a266-96a4a33f903b"></div></div>
+        </div>
+        <div class="sm-feed3"><div class="elfsight-app-2ac1c4c3-97f4-4a4c-b166-bd45b58aacfe"></div></div>
+        
+    </section>
     
     </main>
 
@@ -191,5 +202,6 @@
       <div id="copyright">© Matvey Bouhartsev, 2020</div>
     </footer>
   
+
 </body>
 </html>

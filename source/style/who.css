@@ -27,46 +27,12 @@ section {
     margin-top: -10vh;
 
     color: black;
-    background-color: white;
-}
-
-#about {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-/*	align-items: center;*/ /* Мешает правильному вписыванию изображения */
-	flex-wrap: wrap-reverse;
-	
+    /* background-color: white; */
 	background-color: var(--color-white);
-
-	position: relative;
-	height: fit-content;
 }
 
-#about > div {
+.about {
 	text-align: end;
-	min-width: 30%;
-	width: 500px;
-	max-width: 100%;
-	overflow: hidden;
-	margin: 1%;
-    padding-bottom: 1em;
-	align-self: center;
-}	
-
-#about p {
-    margin-bottom: 0; 
-}
-
-#about > img {
-    padding: 3% 0;
-    margin: 0 1%;
-    object-fit: cover;
-/*    object-fit: contain;*/
-	flex-grow: 0.3;
-	max-width: 500px;
-	min-width: 0;
-/*	Можно попробовать на ПК привязать sticky*/
 }
 
 #contacts .table {
@@ -98,46 +64,14 @@ section {
 
 .link_uni {
     color: blue;
-    display: inline-block;
-    position: relative;
-	transition: color var(--transition-time);
-}
-
-.link_uni::after, .link_uni::after {
-    display: block;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0.05em;
-    left: 50%;
-    bottom: 0;
-    background-color: currentColor;
-    transition: width var(--transition-time);
-}
-
-.link_uni::before, .link_uni::before {
-    display: block;
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0.05em;
-    left: 50%;
-    bottom: 0;
-    background-color: currentColor;
-    transition: width var(--transition-time), left var(--transition-time);
 }
 
 .link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
 	color: darkblue;
 }
 
-.link_uni:hover::before, .link_uni:hover::before {
-    width: 50%;
-    left: 0;
-}
-
-.link_uni:hover::after, .link_uni:hover::after {
-    width: 50%;
+#cv {
+	display: none;
 }
 
 #cv ul {
@@ -175,6 +109,33 @@ section {
 	margin-left: 0.3em;
 	padding: 0.2em;
 	border-radius: 0.3em;
+}
+
+.feed-block, .sm-feed3 {
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.sm-feed {
+	margin-bottom: 70px;
+}
+
+.sm-feed2, .sm-feed3 {
+	position: relative;
+}
+.sm-feed2::after, .sm-feed3::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 50px;
+	background: var(--color-white);
+	z-index: 100000;
 }
 
 @media (max-width: 1024px) {
