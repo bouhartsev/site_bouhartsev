@@ -34,25 +34,45 @@ $(document).ready(function() {
         $(".header__burger, header nav, header nav ul, body").toggleClass('burger-active', Number(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').split(' ')[1].slice(0,-1))*1000);
     }
 
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
+
     function NotReady() {
-        $.ajax({
-            url:'/source/script/dev.json',
-            type:'HEAD',
-            error: function()
-            {
-                let NoIndexCont = document.createElement('noindex');
-                let NotReadyDiv = document.createElement('div');
-                NotReadyDiv.style = "width: 100%; height: 100vh; font-size: 50px; padding: 30px; box-sizing: border-box;z-index:1000000;background: white;position: fixed;";
-                NotReadyDiv.id = 'NotReady';
-                NotReadyDiv.innerHTML = 'Здесь по<span onclick="$(`#NotReady`).hide(0);">я</span>вится сайт <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>';
-                NoIndexCont.prepend(NotReadyDiv)
-                document.body.prepend(NoIndexCont);
-            },
-            success: function()
-            {
-                console.log('development');
-            }
-        });
+        // Without cookie
+        // $.ajax({
+        //     url:'/source/script/dev.json',
+        //     type:'HEAD',
+        //     error: function()
+        //     {
+        //         let NoIndexCont = document.createElement('noindex');
+        //         let NotReadyDiv = document.createElement('div');
+        //         NotReadyDiv.style = "width: 100%; height: 100vh; font-size: 50px; padding: 30px; box-sizing: border-box;z-index:1000000;background: white;position: fixed;";
+        //         NotReadyDiv.id = 'NotReady';
+        //         NotReadyDiv.innerHTML = 'Здесь по<span onclick="document.cookie=`dev=true`;$(`#NotReady`).hide(0);">я</span>вится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>';
+        //         NoIndexCont.prepend(NotReadyDiv)
+        //         document.body.prepend(NoIndexCont);
+        //     },
+        //     success: function()
+        //     {
+        //         console.log('development');
+        //     }
+        // });
+
+        if (getCookie('dev')!='true') {
+            let NoIndexCont = document.createElement('noindex');
+            let NotReadyDiv = document.createElement('div');
+            NotReadyDiv.style = "width: 100%; height: 100vh; font-size: 50px; padding: 30px; box-sizing: border-box;z-index:1000000;background: white;position: fixed;";
+            NotReadyDiv.id = 'NotReady';
+            NotReadyDiv.innerHTML = 'Здесь по<span onclick="document.cookie=`dev=true`;$(`#NotReady`).hide(0);">я</span>вится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>';
+            NoIndexCont.prepend(NotReadyDiv)
+            document.body.prepend(NoIndexCont);
+            document.cookie="dev=false";
+        }
+        else console.log('development');
         
     }
 
