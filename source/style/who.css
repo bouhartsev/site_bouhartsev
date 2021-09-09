@@ -1,3 +1,8 @@
+::selection {
+	color: var(--color-white);
+	background-color: var(--color-black);
+}
+
 header {
 	color: var(--color-white);
     text-shadow: 0 0 2em var(--color-white), 0 0 0.03em var(--color-black);
