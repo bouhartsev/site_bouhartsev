@@ -67,12 +67,14 @@ $(document).ready(function() {
             let NotReadyDiv = document.createElement('div');
             NotReadyDiv.style = "width: 100%; height: 100vh; font-size: 50px; padding: 30px; box-sizing: border-box;z-index:1000000;background: white;position: fixed;";
             NotReadyDiv.id = 'NotReady';
-            NotReadyDiv.innerHTML = 'Здесь по<span onclick="document.cookie=`dev=true`;$(`#NotReady`).hide(0);">я</span>вится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>';
+            NotReadyDiv.innerHTML = 'Здесь по<span onclick="document.cookie=`dev=true;max-age=3600`;$(`#NotReady`).hide(0);">я</span>вится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>';
             NoIndexCont.prepend(NotReadyDiv)
             document.body.prepend(NoIndexCont);
             document.cookie="dev=false";
         }
-        else console.log('development');
+        else {
+            console.log('development');
+        }
         
     }
 
