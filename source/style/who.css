@@ -1,3 +1,8 @@
+::selection {
+	color: var(--color-white);
+	background-color: var(--color-black);
+}
+
 header {
 	color: var(--color-white);
     text-shadow: 0 0 2em var(--color-white), 0 0 0.03em var(--color-black);
@@ -119,6 +124,10 @@ section {
 	flex-wrap: wrap;
 }
 
+.feed-block>* * {
+	max-width: 100vw;
+}
+
 .sm-feed {
 	margin-bottom: 70px;
 }
@@ -135,6 +144,21 @@ section {
 	width: 100%;
 	height: 50px;
 	background: var(--color-white);
+	z-index: 100000;
+}
+
+.sm-feed4 {
+	position: relative;
+}
+.sm-feed4::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 60px;
+	background: white;
 	z-index: 100000;
 }
 

@@ -1,3 +1,12 @@
+body {
+	background-color: var(--color-black);
+}
+
+::selection {
+	color: var(--color-black);
+	background-color: var(--color-white);
+}
+
 header {
 	color: var(--color-black);
     text-shadow: 0 0 2em var(--color-white), 0 0 0.03em var(--color-black);
@@ -90,6 +99,22 @@ th, td {
 	padding: 0.2em 0.4em;
 }
 
+.levels_prog {
+	width: 25vw;
+	position: sticky;
+	top: 15vh;
+	float: right;
+}
+
+.levels_prog h3 {
+	text-align: center;
+}
+
+#videos p {
+	text-align: center;
+}
+
+
 #videos>.container {
 	display: flex;
 	justify-content: space-around;
@@ -102,4 +127,11 @@ th, td {
 	width: 640px;
 	margin: 10px;
 	max-width: 100%;
+}
+
+
+@media (max-width: 768px) {
+	.levels_prog {
+		display: none;
+	}
 }
