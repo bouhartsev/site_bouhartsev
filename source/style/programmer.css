@@ -11,12 +11,11 @@ header {
 	color: var(--color-black);
     text-shadow: 0 0 2em var(--color-white), 0 0 0.03em var(--color-black);
 
-    background: black;
+    background: white;
 	background: radial-gradient(circle, rgba(230,247,255,1) 0%, rgba(208,240,255,1) 80%, rgba(178,230,255,1) 100%);
 }
 
 header>h1 {
-    font-family: 'Alice', sans-serif;
     font-family: 'Commissioner', sans-serif;
 	font-size: 1.9em;
 }

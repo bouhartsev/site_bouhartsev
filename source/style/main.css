@@ -26,6 +26,17 @@
 	src: url('/source/fonts/Commissioner/Commissioner-VariableFont_wght.ttf') format('truetype');
 }
 
+
+@font-face {
+	font-family: 'YouTubeSansDark';
+	src: url('/source/fonts/YouTubeSansDark/YouTubeSansDark-Black.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Alfphabet';
+	src: url('/source/fonts/ALFPHABET-IV.TTF') format('truetype');
+}
+
 :root {
 	--transition-time: 0.2s ease-in-out;
 

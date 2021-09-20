@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'YouTube Sans Dark';
+    src: url('YouTubeSansDark-ExtraBold.eot');
+    src: local('YouTube Sans Dark ExtraBold'), local('YouTubeSansDark-ExtraBold'),
+        url('YouTubeSansDark-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('YouTubeSansDark-ExtraBold.woff2') format('woff2'),
+        url('YouTubeSansDark-ExtraBold.woff') format('woff'),
+        url('YouTubeSansDark-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YouTube Sans Dark';
+    src: url('YouTubeSansDark-Black.eot');
+    src: local('YouTube Sans Dark Black'), local('YouTubeSansDark-Black'),
+        url('YouTubeSansDark-Black.eot?#iefix') format('embedded-opentype'),
+        url('YouTubeSansDark-Black.woff2') format('woff2'),
+        url('YouTubeSansDark-Black.woff') format('woff'),
+        url('YouTubeSansDark-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YouTube Sans Dark';
+    src: url('YouTubeSansDark-Bold.eot');
+    src: local('YouTube Sans Dark Bold'), local('YouTubeSansDark-Bold'),
+        url('YouTubeSansDark-Bold.eot?#iefix') format('embedded-opentype'),
+        url('YouTubeSansDark-Bold.woff2') format('woff2'),
+        url('YouTubeSansDark-Bold.woff') format('woff'),
+        url('YouTubeSansDark-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YouTube Sans Dark';
+    src: url('YouTubeSansDark-Light.eot');
+    src: local('YouTube Sans Dark Light'), local('YouTubeSansDark-Light'),
+        url('YouTubeSansDark-Light.eot?#iefix') format('embedded-opentype'),
+        url('YouTubeSansDark-Light.woff2') format('woff2'),
+        url('YouTubeSansDark-Light.woff') format('woff'),
+        url('YouTubeSansDark-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YouTube Sans Dark';
+    src: url('YouTubeSansDark-Medium.eot');
+    src: local('YouTube Sans Dark Medium'), local('YouTubeSansDark-Medium'),
+        url('YouTubeSansDark-Medium.eot?#iefix') format('embedded-opentype'),
+        url('YouTubeSansDark-Medium.woff2') format('woff2'),
+        url('YouTubeSansDark-Medium.woff') format('woff'),
+        url('YouTubeSansDark-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YouTube Sans Dark';
+    src: url('YouTubeSansDark-SemiBold.eot');
+    src: local('YouTube Sans Dark SemiBold'), local('YouTubeSansDark-SemiBold'),
+        url('YouTubeSansDark-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('YouTubeSansDark-SemiBold.woff2') format('woff2'),
+        url('YouTubeSansDark-SemiBold.woff') format('woff'),
+        url('YouTubeSansDark-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YouTube Sans Dark';
+    src: url('YouTubeSansDark-Regular.eot');
+    src: local('YouTube Sans Dark Regular'), local('YouTubeSansDark-Regular'),
+        url('YouTubeSansDark-Regular.eot?#iefix') format('embedded-opentype'),
+        url('YouTubeSansDark-Regular.woff2') format('woff2'),
+        url('YouTubeSansDark-Regular.woff') format('woff'),
+        url('YouTubeSansDark-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
