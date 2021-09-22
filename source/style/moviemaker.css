@@ -91,4 +91,13 @@ section {
 	/* margin: auto; */
 
 	visibility: hidden;
+    position: absolute;
+}
+
+.text3d {
+    font-family: 'Alfphabet';
+    color: white;
+    position: absolute;
+    text-align: center;
+    bottom: 25%;
 }
