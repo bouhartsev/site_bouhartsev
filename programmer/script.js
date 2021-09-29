@@ -73,4 +73,19 @@ $(document).ready(function() {
 
 	// ------------------------------------------------------------------------------- //
 
+	async function getPinnedProjects(username) {
+		let response = await fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username='+username);
+
+		if (response.ok) { // если HTTP-статус в диапазоне 200-299
+			let json = await response.json();
+			return json;
+		} else {
+			console.log("Ошибка HTTP: " + response.status);
+			return []
+		}
+	}
+	console.log(getPinnedProjects());
+
+	// ------------------------------------------------------------------------------- //
+
 });

@@ -1,0 +1,103 @@
+body {
+    --color-black: #1a161f;
+
+    background-color: var(--color-black);
+}
+
+::selection {
+	color: var(--color-black);
+	background-color: var(--color-white);
+}
+
+header {
+	color: var(--color-black);
+    text-shadow: 0 0 2em var(--color-white), 0 0 0.03em var(--color-black);
+
+    background: white;
+	/* background: url('/source/img/back_stars.png'); */
+    /* background: rgb(133,166,205); */
+    background: radial-gradient(circle, rgba(202,212,255,1) 50%, rgba(139,153,215,1) 120%);
+}
+
+header>h1 {
+    font-family: 'YouTubeSansDark', sans-serif;
+    font-size: 2em;
+}
+    
+.headerFixed h1 {
+    font-size: 1.2em;
+}
+
+.header__burger::before,
+.header__burger::after,
+.header__burger span {
+    background-color: var(--color-black);
+}
+
+section {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+.link_uni {
+    color: rgb(0, 185, 255);
+}
+
+.link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
+    color: rgb(83, 209, 255);
+}
+
+.about {
+    flex-wrap: wrap;
+}
+
+
+#about>*:not(#imgAva) {
+    z-index: 2;
+}
+
+#imgAva {
+    z-index: 1;
+
+    /* transform: translate(-50%, 70%); */
+}
+
+#about::after {
+    content: '';
+    position: relative;
+    height: 400px;
+    width: 100%;
+
+    background: url('/source/img/back_stars.png');
+    background-attachment: fixed;
+    box-shadow: 0 0 20px 20px var(--color-black) inset;
+}
+
+#about::before {
+    content:'spotlight';
+
+	/* background: linear-gradient(90deg, rgba(188,255,246,1) 0%, rgba(134,229,248,1) 70%, rgba(188,255,246,1) 100%); */
+	/* opacity: 80%; */
+	/* filter: blur(1000px); */
+	/* transform: rotateX(90deg) translate(-50%, -54%); */
+
+	/* width: 30%; */
+	/* top: 0; */
+	/* bottom: 0; */
+    /* height: 200px; */
+	/* left: 50%; */
+	/* margin: auto; */
+
+	visibility: hidden;
+    position: absolute;
+}
+
+.text3d {
+    font-family: 'Alfphabet';
+    color: white;
+    position: absolute;
+    text-align: center;
+    bottom: 25%;
+}
