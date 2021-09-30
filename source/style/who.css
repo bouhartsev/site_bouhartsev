@@ -71,7 +71,7 @@ section {
     color: blue;
 }
 
-.link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
+.link_uni:hover, .link_uni:active {
 	color: darkblue;
 }
 
