@@ -98,7 +98,7 @@ $(document).ready(function() {
 			element.innerHTML = card;
 			parent.append(element);
 		}
-		document.getElementById('projects').appendChild(parent);
+		document.querySelector('#projects>a').before(parent);
 	})
 
 

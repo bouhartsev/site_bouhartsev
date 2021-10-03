@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             popup.classList.toggle('popup_opened');
             document.body.classList.toggle('overflow-hidden');
         }
-        else {
+        else if (popup!=null) {
             console.log("Popup '"+popup+"' doesn't exist")
         }
     }
@@ -103,12 +103,12 @@ document.addEventListener("DOMContentLoaded", function() {
             document.cookie="dev=false";
         }
         else {
-            console.log('development');
+            console.log('The site is being developed');
         }
         
     }
 
-    console.log("Load");
+    console.log("loading...");
 	NotReady();
 
     isBurger();
