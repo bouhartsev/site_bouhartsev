@@ -42,11 +42,11 @@ section {
 	flex-direction: row-reverse;
 }
 
-.link_uni {
+.link_uni, .link_color {
     color: rgb(0, 185, 255);
 }
 
-.link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
+.link_uni:hover, .link_color:hover, .link_uni:active, .link_color:active {
 	color: rgb(83, 209, 255);
 }
 
@@ -101,12 +101,47 @@ th, td {
 .levels_prog {
 	width: 25vw;
 	position: sticky;
-	top: 15vh;
+	top: 25vh;
 	float: right;
 }
 
 .levels_prog h3 {
 	text-align: center;
+}
+
+.cards {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.cards>* {
+	flex: 1 42%;
+	border: #2C2C2C solid 3px;
+	padding: 10px;
+	padding-bottom: calc(0.7em + 15px);
+	margin: 10px;
+	border-radius: 10px;
+	position: relative;
+}
+
+.cards>* p {
+	font-size: 0.9em;
+}
+
+.cards>* span {
+	font-size: 0.7em;
+	position: absolute;
+	bottom: 15px;
+	left: 10px;
+}
+
+.cards>* span::before {
+	content: '#';
 }
 
 #videos p {

@@ -45,7 +45,7 @@ section {
     color: rgb(0, 185, 255);
 }
 
-.link_uni:hover, .link_uni:hover, .link_uni:active, .link_uni:active {
+.link_uni:hover, .link_uni:active {
     color: rgb(83, 209, 255);
 }
 

@@ -3,11 +3,11 @@ $(document).ready(function() {
 	// YouTube adaptive
 
     function YouTubeVideoHeight() {
-        $('#videos iframe').css('height', $('#videos iframe').outerWidth() / 1.777);
+		document.querySelectorAll('#videos iframe').forEach(elem => elem.height=''+(elem.offsetWidth / 1.777));
     }
 
     YouTubeVideoHeight();
-    $(window).resize(YouTubeVideoHeight);
+    window.addEventListener('resize', YouTubeVideoHeight);
 
 	// ------------------------------------------------------------------------------- //
 
@@ -74,17 +74,33 @@ $(document).ready(function() {
 	// ------------------------------------------------------------------------------- //
 
 	async function getPinnedProjects(username) {
+		// fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username='+username).then(response => {console.log(response.results())});
 		let response = await fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username='+username);
-
 		if (response.ok) { // если HTTP-статус в диапазоне 200-299
 			let json = await response.json();
 			return json;
-		} else {
+		}
+		else {
 			console.log("Ошибка HTTP: " + response.status);
 			return []
 		}
 	}
-	console.log(getPinnedProjects());
+	getPinnedProjects('bouhartsev').then((projects) => {
+		let parent = document.createElement('ul');
+		parent.classList.add('cards');
+		let element=null;
+		for (project of projects) {
+			let card = '';
+			if (project['repo']) card += '<strong><a href="#project_'+project['repo']+'" class="link_color">'+project['repo']+'</a></strong>';
+			if (project['description']) card += '<p>'+project['description']+'</p>';
+			if (project['language']) card += '<span>'+project['language']+'</span>';
+			element = document.createElement('li');
+			element.innerHTML = card;
+			parent.append(element);
+		}
+		document.querySelector('#projects>a').before(parent);
+	})
+
 
 	// ------------------------------------------------------------------------------- //
 

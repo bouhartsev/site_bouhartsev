@@ -125,13 +125,21 @@ header h1 {
     
 	height: 30vh;
 	max-height: 100%;
-
-	display: flex;
-	align-items: center;
-    justify-content: center;
     text-align: center;
 
 	z-index: 1;
+	position: relative;
+}
+
+h1>* {
+    height: fit-content;
+	width: fit-content;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+	left: 0;
+	right: 0;
+    margin: auto;
 }
 
 header:not(.headerFixed) h1 {
@@ -141,7 +149,7 @@ header:not(.headerFixed) h1 {
 .headerFixed {
     position: fixed;
     height: 10vh;
-	min-height: 3em;
+	min-height: max(3em, 40px);
     width: 100vw;
     top: 0;
     left: 0;
@@ -150,6 +158,88 @@ header:not(.headerFixed) h1 {
     flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+}
+
+body::before {
+	content: '';
+	display: inline-block;
+	height: 0;
+}
+.add-empty {
+	position: relative;
+	--header-height: 10vh;
+}
+.add-empty::before {
+	height: var(--header-height);
+}
+
+.popup {
+	position: fixed;
+	top: 100px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 1000000;
+	background: white;
+	color: black;
+
+	padding: 10px;
+	width: fit-content;
+	max-width: 90%;
+}
+
+.popup:not(.popup_opened) {
+	visibility: hidden;
+}
+.popup_opened {
+	visibility: visible;
+}
+.popup::after {
+	position: absolute;
+	content: '';
+	box-sizing: border-box;
+	top: calc(-10px - 0.5em);
+	left: 0;
+	z-index: -1;
+
+	width: 100%;
+	height: calc(100% + 20px + 1em);
+	background: white;
+}
+.popup__back {
+	display: block;
+	content: '';
+	top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: -3;
+	width: 100%;
+}
+.popup__x {
+	position: absolute;
+	top: calc(-0.5em - 10px);
+	right: 0;
+	padding: 10px;
+
+	background: transparent;
+	font-size: 1em;
+	line-height: 0.5em;
+}
+.popup__x, .popup__back {
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.popup__button {
+	margin-right: 10px;
+}
+
+[hidden] { display: none }
+.overflow-hidden {
+	overflow:hidden;
 }
 
 a {
@@ -464,6 +554,12 @@ footer>a:hover::after {
 @media (max-width: 320px) {
 	footer {
 		font-size: 0.8em;
+	}
+}
+
+@media (max-width: 220px), (max-height: 400px) and (max-width: 320px) {
+	h1 {
+		display: none;
 	}
 }
 
