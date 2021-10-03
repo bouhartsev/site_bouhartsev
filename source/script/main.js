@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function isBurger() {
         if (window.innerWidth<=Number(getComputedStyle(document.documentElement).getPropertyValue('--size-tablet').slice(0, -2))) {
-            if (!$('header').hasClass("headerFixed")) {
-                $('header').before('<div id="emptyHeader"></div>');
-                $('header').addClass("headerFixed");
+            if (!document.querySelector('header').classList.contains("headerFixed")) {
+                document.querySelector('body').classList.add('add-empty');
+                document.querySelector('header').classList.add("headerFixed");
             }
-            $('#emptyHeader').height($('header').height());
             $(window).unbind('scroll', HeaderOnScroll);
+            document.querySelector('.add-empty').style.setProperty("--header-height", document.querySelector('header').clientHeight + 'px');
             return true;
         }
         else {
             $(window).bind('scroll', HeaderOnScroll);
-            $('#emptyHeader').height($('header').height());
+            HeaderOnScroll();
             return false;
         }
     }

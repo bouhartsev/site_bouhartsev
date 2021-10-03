@@ -149,7 +149,7 @@ header:not(.headerFixed) h1 {
 .headerFixed {
     position: fixed;
     height: 10vh;
-	min-height: max(3em, 40px); /* !!!!!!!!!!!!!!!!!!!!!! */
+	min-height: max(3em, 40px);
     width: 100vw;
     top: 0;
     left: 0;
