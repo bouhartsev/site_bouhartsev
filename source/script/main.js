@@ -83,24 +83,18 @@ document.addEventListener("DOMContentLoaded", function() {
         // });
 
         if (getCookie('dev')!='true') {
-            // let NoIndexCont = document.createElement('noindex');
-            // let NotReadyDiv = document.createElement('div');
-            // NotReadyDiv.style = "width: 100%; height: 100vh; font-size: 50px; padding: 30px; box-sizing: border-box;z-index:1000000;background: white;position: fixed;";
-            // NotReadyDiv.id = 'NotReady';
-            // NotReadyDiv.innerHTML = 'Здесь по<span onclick="document.cookie=`dev=true;max-age=3600`;$(`#NotReady`).hide(0);">я</span>вится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>';
-            // NoIndexCont.prepend(NotReadyDiv)
-            // document.body.prepend(NoIndexCont);
             document.body.insertAdjacentHTML('afterbegin', `
             <noindex id="NotReady" class="popup" style="text-align: center;">
                 <button data-popup-close class="popup__back"></button>
                 <button data-popup-close class="popup__x" title="Close popup">x</button>
-                Здесь появится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a></p>
+                <p>Здесь появится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>
+                <br>The site is being developed</p>
                 <button data-popup-close class="popup__button">OK</button>
-                <button data-popup-close class="popup__button" onclick="document.cookie='dev=true'">Больше не показывать</button>
+                <button data-popup-close class="popup__button" onclick="document.cookie='dev=true;path=/;'">Больше не показывать</button>
             </noindex>
             `);
             togglePopup(null, '#NotReady');
-            document.cookie="dev=false";
+            document.cookie="dev=false;path=/;";
         }
         else {
             console.log('The site is being developed');

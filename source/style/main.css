@@ -235,6 +235,11 @@ body::before {
 }
 .popup__button {
 	margin-right: 10px;
+	outline: none;
+    border: none;
+    cursor: pointer;
+    background: var(--color-black);
+    color: var(--color-white);
 }
 
 [hidden] { display: none }
