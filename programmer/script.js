@@ -3,11 +3,13 @@ $(document).ready(function() {
 	// YouTube adaptive
 
     function YouTubeVideoHeight() {
-        $('#videos iframe').css('height', $('#videos iframe').outerWidth() / 1.777);
+		for (elem of document.querySelectorAll('#videos iframe')) {
+			elem.height = ''+ (elem.offsetWidth / 1.777);
+		}
     }
 
     YouTubeVideoHeight();
-    $(window).resize(YouTubeVideoHeight);
+    window.addEventListener('resize', YouTubeVideoHeight);
 
 	// ------------------------------------------------------------------------------- //
 

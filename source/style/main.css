@@ -152,6 +152,19 @@ header:not(.headerFixed) h1 {
 	justify-content: space-between;
 }
 
+body::before {
+	content: '';
+	display: inline-block;
+	height: 0;
+}
+.add-empty {
+	position: relative;
+	--header-height: 10vh;
+}
+.add-empty::before {
+	height: var(--header-height);
+}
+
 a {
 	color: inherit;
 	text-decoration: none;

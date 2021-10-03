@@ -1,15 +1,15 @@
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
     function HeaderOnScroll() {
         //Change header to fixed and reverse
-        if (($('main').offset().top-window.pageYOffset <= 0) && !($('header').hasClass("headerFixed"))) {
-            $('header').before('<div id="emptyHeader"></div>');
-            $('#emptyHeader').height($('header').height());
-            $('header').addClass("headerFixed");
+        if ((document.querySelector('main').offsetTop-window.pageYOffset <= 0) && !(document.querySelector('header').classList.contains("headerFixed"))) {
+            document.querySelector('body').classList.add('add-empty');
+            document.querySelector('.add-empty').style.setProperty("--header-height", document.querySelector('header').clientHeight + 'px');
+            document.querySelector('header').classList.add("headerFixed");
             //window.pageYOffset = 0;
         }
-        else if ($('main').offset().top-window.pageYOffset > 0) {
-            $('header').removeClass("headerFixed");
-            $('#emptyHeader').remove();
+        else if (document.querySelector('main').offsetTop-window.pageYOffset > 0) {
+            document.querySelector('header').classList.remove("headerFixed");
+            document.querySelector('body').classList.remove("add-empty");
         }
     }
 
