@@ -3,9 +3,7 @@ $(document).ready(function() {
 	// YouTube adaptive
 
     function YouTubeVideoHeight() {
-		for (elem of document.querySelectorAll('#videos iframe')) {
-			elem.height = ''+ (elem.offsetWidth / 1.777);
-		}
+		document.querySelectorAll('#videos iframe').forEach(elem => elem.height=''+(elem.offsetWidth / 1.777));
     }
 
     YouTubeVideoHeight();
