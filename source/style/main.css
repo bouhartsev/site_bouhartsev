@@ -319,7 +319,7 @@ section {
 	height: fit-content;
 }
 
-.about > div {
+.about_text {
 	min-width: 30%;
 	width: 500px;
 	max-width: 100%;
