@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector('body').classList.add('add-empty');
                 document.querySelector('header').classList.add("headerFixed");
             }
-            $(window).unbind('scroll', HeaderOnScroll);
+            window.addEventListener('scroll', HeaderOnScroll);
             document.querySelector('.add-empty').style.setProperty("--header-height", document.querySelector('header').clientHeight + 'px');
             return true;
         }
