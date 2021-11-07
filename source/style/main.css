@@ -525,6 +525,8 @@ footer>a:hover::after {
 		left: 0;
 		width: 100%;
 		height: 100%;
+
+		transition: height var(--transition-time);
 	}
 
 	header nav.burger-active {
@@ -537,6 +539,7 @@ footer>a:hover::after {
 		align-items: center;
 
 		font-size: 1.5em;
+		transition: opacity var(--transition-time);
 	}
 
 	nav ul:not(.burger-active) {
