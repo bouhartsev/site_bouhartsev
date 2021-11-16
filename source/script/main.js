@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector('body').classList.add('add-empty');
                 document.querySelector('header').classList.add("headerFixed");
             }
-            window.addEventListener('scroll', HeaderOnScroll);
+            window.removeEventListener('scroll', HeaderOnScroll);
             document.querySelector('.add-empty').style.setProperty("--header-height", document.querySelector('header').clientHeight + 'px');
             return true;
         }
         else {
-            window.addEventListener('scroll', HeaderOnScroll); // избыточность. работает. не трогай.
-            HeaderOnScroll();
+            window.addEventListener('scroll', HeaderOnScroll);
+            HeaderOnScroll(); // избыточность. работает. не трогай.
             return false;
         }
     }
