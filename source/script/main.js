@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
+    let transition_time = Number(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').split(' ')[1].slice(0,-1))*1000;
+    console.log(transition_time)
+
     function HeaderOnScroll() {
         //Change header to fixed and reverse
         if ((document.querySelector('main').offsetTop-window.pageYOffset <= 0) && !(document.querySelector('header').classList.contains("headerFixed"))) {
@@ -19,19 +22,22 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelector('body').classList.add('add-empty');
                 document.querySelector('header').classList.add("headerFixed");
             }
-            $(window).unbind('scroll', HeaderOnScroll);
+            window.removeEventListener('scroll', HeaderOnScroll);
             document.querySelector('.add-empty').style.setProperty("--header-height", document.querySelector('header').clientHeight + 'px');
             return true;
         }
         else {
-            $(window).bind('scroll', HeaderOnScroll);
-            HeaderOnScroll();
+            window.addEventListener('scroll', HeaderOnScroll);
+            HeaderOnScroll(); // избыточность. работает. не трогай.
             return false;
         }
     }
 
     function clickBurger() {
-        $(".header__burger, header nav, header nav ul, body").toggleClass('burger-active', Number(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').split(' ')[1].slice(0,-1))*1000);
+        // $(".header__burger, header nav, header nav ul, body").toggleClass('burger-active', Number(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').split(' ')[1].slice(0,-1))*1000);
+        document.querySelectorAll(".header__burger, header nav, header nav ul, body").forEach((el) => {
+            el.classList.toggle("burger-active"); // проблема - при увеличении высоты экрана вручную видно страницу снизу
+        });
     }
 
     function getCookie(name) {
@@ -62,26 +68,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function NotReady() {
-        // Without cookie
-        // $.ajax({
-        //     url:'/source/script/dev.json',
-        //     type:'HEAD',
-        //     error: function()
-        //     {
-        //         let NoIndexCont = document.createElement('noindex');
-        //         let NotReadyDiv = document.createElement('div');
-        //         NotReadyDiv.style = "width: 100%; height: 100vh; font-size: 50px; padding: 30px; box-sizing: border-box;z-index:1000000;background: white;position: fixed;";
-        //         NotReadyDiv.id = 'NotReady';
-        //         NotReadyDiv.innerHTML = 'Здесь по<span onclick="document.cookie=`dev=true`;$(`#NotReady`).hide(0);">я</span>вится новая версия сайта <a href="https://vk.com/bouhartsev" style="color: blue">Матвея Бухарцева</a>';
-        //         NoIndexCont.prepend(NotReadyDiv)
-        //         document.body.prepend(NoIndexCont);
-        //     },
-        //     success: function()
-        //     {
-        //         console.log('development');
-        //     }
-        // });
-
         if (getCookie('dev')!='true') {
             document.body.insertAdjacentHTML('afterbegin', `
             <noindex id="NotReady" class="popup" style="text-align: center;">
@@ -99,15 +85,14 @@ document.addEventListener("DOMContentLoaded", function() {
         else {
             console.log('The site is being developed');
         }
-        
     }
 
     console.log("loading...");
 	NotReady();
 
     isBurger();
-    $(window).resize(isBurger);
-    $("#burger").click(clickBurger);
+    window.addEventListener('resize', isBurger);
+    document.querySelector("#burger").addEventListener('click',clickBurger);
 
     document.querySelectorAll('[data-popup-open], [data-popup-close]').forEach(el => el.addEventListener('click', togglePopup));
     togglePopup(null, window.location.hash.split('?')[0]);
