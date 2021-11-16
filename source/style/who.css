@@ -157,9 +157,14 @@ section {
 	left: 0;
 	right: 0;
 	width: 100%;
-	height: 60px;
-	background: white;
+	height: 40px;
+	background: var(--color-white);
 	z-index: 100000;
+}
+
+footer *::selection {
+	background-color: var(--color-white);
+	color: var(--color-black);
 }
 
 @media (max-width: 1024px) {
