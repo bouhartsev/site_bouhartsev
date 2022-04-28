@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	async function getPinnedProjects(username) {
 		// fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username='+username).then(response => {console.log(response.results())});
-		let response = await fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username='+username);
+		let response = await fetch('https://gh-pinned-repos.egoist.sh/?username='+username);
 		if (response.ok) { // если HTTP-статус в диапазоне 200-299
 			let json = await response.json();
 			return json;
