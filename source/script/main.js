@@ -56,14 +56,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         else {
             if(event) target_id = event.currentTarget.getAttribute('href');
-            if (target_id) popup = document.querySelector(".popup"+target_id);
+            try {
+                if (target_id) popup = document.querySelector(".popup"+target_id);
+            }
+            catch {
+                popup = false;
+            }
         }
         if (popup) {
             popup.classList.toggle('popup_opened');
             document.body.classList.toggle('overflow-hidden');
         }
         else if (popup!=null) {
-            console.log("Popup '"+popup+"' doesn't exist")
+            console.log("Popup '"+target_id+"' doesn't exist")
         }
     }
 
