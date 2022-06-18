@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let transition_time = Number(getComputedStyle(document.documentElement).getPropertyValue('--transition-time').split(' ')[1].slice(0,-1))*1000;
-    console.log(transition_time)
+    let size_tablet = Number(getComputedStyle(document.documentElement).getPropertyValue('--size-tablet').slice(0, -2));
 
     function HeaderOnScroll() {
         //Change header to fixed and reverse
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function isBurger() {
-        if (window.innerWidth<=Number(getComputedStyle(document.documentElement).getPropertyValue('--size-tablet').slice(0, -2))) {
+        if (window.innerWidth<=size_tablet) {
             if (!document.querySelector('header').classList.contains("headerFixed")) {
                 document.querySelector('body').classList.add('add-empty');
                 document.querySelector('header').classList.add("headerFixed");
@@ -56,14 +56,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         else {
             if(event) target_id = event.currentTarget.getAttribute('href');
-            if (target_id) popup = document.querySelector(target_id);
+            try {
+                if (target_id) popup = document.querySelector(".popup"+target_id);
+            }
+            catch {
+                popup = false;
+            }
         }
         if (popup) {
             popup.classList.toggle('popup_opened');
             document.body.classList.toggle('overflow-hidden');
         }
         else if (popup!=null) {
-            console.log("Popup '"+popup+"' doesn't exist")
+            console.log("Popup '"+target_id+"' doesn't exist")
         }
     }
 
@@ -79,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <button data-popup-close class="popup__button" onclick="document.cookie='dev=true;path=/;'">Больше не показывать</button>
             </noindex>
             `);
-            togglePopup(null, '#NotReady');
+            if (window.location.hash.split('?')[0]!="#NotReady") togglePopup(null, '#NotReady');
             document.cookie="dev=false;path=/;";
         }
         else {
