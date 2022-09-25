@@ -60,18 +60,21 @@ section {
 	justify-content: flex-end;
 }
 
-#contacts span:nth-child(2) {
+#contacts .link_uni_cont {
 	flex-basis: 50%;
-}
-
-#contacts span:nth-child(2) {
 	white-space: nowrap;
 }
 
-#contacts span:nth-child(2)::before {
-    content: "-";
+#contacts .link_uni_cont::before {
+	display: inline-block;
+	width: 1em;
+	text-align: center;
     margin: 0 0.5em;
-	
+	font-family: var(--fa-style-family-brands), var(--fa-style-family-classic);
+}
+
+#contacts .link_uni_cont:not([class*="fa"])::before {
+	content: "-";
 }
 
 /* #cv {
