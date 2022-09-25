@@ -1,3 +1,8 @@
+:root {
+	--color-link: blue;
+	--color-link-act: darkblue;
+}
+
 ::selection {
 	color: var(--color-white);
 	background-color: var(--color-black);
@@ -69,14 +74,6 @@ section {
 	
 }
 
-.link_uni {
-    color: blue;
-}
-
-.link_uni:hover, .link_uni:active {
-	color: darkblue;
-}
-
 /* #cv {
 	display: none;
 } */
@@ -88,12 +85,12 @@ section {
 	margin: auto;
 }
 
-#cv li {
+#cv a.link_uni_cont {
 	position: relative;
 	line-height: 1.5em;
 }
 
-#cv li::before {
+#cv a.link_uni_cont::before {
 	content: "";
 	width: 1em;
 	height: 1.25em;
@@ -106,7 +103,7 @@ section {
 	vertical-align: top;
 }
 
-#cv li::after {
+#cv a.link_uni_cont::after {
 	display: inline;
 	content: attr(data-cv-lang);
 	font-size: 0.5em;
