@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		for (project of projects) {
 			let card = '';
 			// if (project['repo']) card += '<strong><a href="#project_'+project['repo']+'" class="link_color">'+project['repo']+'</a></strong>';
-			if (project['repo']) card += '<strong><a href="https://github.com/bouhartsev/'+project['repo']+'" class="link_color">'+project['repo']+'</a></strong>';
+			if (project['repo']) card += '<strong><a href="https://github.com/bouhartsev/'+project['repo']+'" class="link_uni">'+project['repo']+'</a></strong>';
 			if (project['description']) card += '<p>'+project['description']+'</p>';
 			if (project['language']) card += '<span>'+project['language']+'</span>';
 			element = document.createElement('li');

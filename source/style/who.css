@@ -1,3 +1,8 @@
+:root {
+	--color-link: blue;
+	--color-link-act: darkblue;
+}
+
 ::selection {
 	color: var(--color-white);
 	background-color: var(--color-black);
@@ -55,26 +60,21 @@ section {
 	justify-content: flex-end;
 }
 
-#contacts span:nth-child(2) {
+#contacts .link_uni_cont {
 	flex-basis: 50%;
-}
-
-#contacts span:nth-child(2) {
 	white-space: nowrap;
 }
 
-#contacts span:nth-child(2)::before {
-    content: "-";
+#contacts .link_uni_cont::before {
+	display: inline-block;
+	width: 1em;
+	text-align: center;
     margin: 0 0.5em;
-	
+	font-family: var(--fa-style-family-brands), var(--fa-style-family-classic);
 }
 
-.link_uni {
-    color: blue;
-}
-
-.link_uni:hover, .link_uni:active {
-	color: darkblue;
+#contacts .link_uni_cont:not([class*="fa"])::before {
+	content: "-";
 }
 
 /* #cv {
@@ -88,12 +88,12 @@ section {
 	margin: auto;
 }
 
-#cv li {
+#cv a.link_uni_cont {
 	position: relative;
 	line-height: 1.5em;
 }
 
-#cv li::before {
+#cv a.link_uni_cont::before {
 	content: "";
 	width: 1em;
 	height: 1.25em;
@@ -106,7 +106,7 @@ section {
 	vertical-align: top;
 }
 
-#cv li::after {
+#cv a.link_uni_cont::after {
 	display: inline;
 	content: attr(data-cv-lang);
 	font-size: 0.5em;

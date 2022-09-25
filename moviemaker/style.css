@@ -1,6 +1,9 @@
 :root {
     --ufo-scroll: 0;
     --ufo-change: 0;
+
+    --color-link: rgb(0, 185, 255);
+    --color-link-act: rgb(83, 209, 255);
 }
 
 body {
@@ -47,15 +50,6 @@ section {
     background-color: var(--color-black);
 }
 
-.link_uni {
-    color: rgb(0, 185, 255);
-}
-
-.link_uni:hover,
-.link_uni:active {
-    color: rgb(83, 209, 255);
-}
-
 .about {
     flex-wrap: wrap;
 
@@ -96,6 +90,7 @@ section {
     box-sizing: border-box;
     width: 100%;
     height: 50vh;
+    min-height: 280px;
     box-shadow: 0 0 20px 20px var(--color-black) inset;
 }
 
