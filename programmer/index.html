@@ -1,107 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    
+  <head>
+    <meta charset="utf-8" />
+
     <title>Матвей Бухарцев - это программист</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1a1a1a">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a1a1a" />
 
     <!--    Styles-->
-    <link rel="stylesheet" href="/source/style/main.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/source/style/main.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <!--    libraries-->
     <!-- <script defer src="/source/libs/jquery.js" type="text/javascript"></script>
     <script defer src="/source/libs/jquery-ui-custom.js" type="text/javascript"></script> -->
-    
+
     <!--    Scripts-->
     <script defer src="/source/script/main.js" type="text/javascript"></script>
     <script defer src="./script.js" type="text/javascript"></script>
-</head>
-<body>
+  </head>
+  <body>
     <noscript>
-    	Ваш браузер не <a href="https://enable-javascript.com/ru">поддерживает</a> скрипты! <br> Your browser does not <a href="https://enable-javascript.com/ru">support</a> JavaScript!
+      Ваш браузер не
+      <a href="https://enable-javascript.com/ru">поддерживает</a> скрипты!
+      <br />
+      Your browser does not
+      <a href="https://enable-javascript.com/ru">support</a> JavaScript!
     </noscript>
 
     <header>
-        <h1><a href="/">Матвей Бухарцев - это</a></h1>
-        <nav>
-            <ul>
-                <li><a href="/">кто?</a></li>
-                <li><a href="/programmer/">программист</a></li>
-                <li><a href="/moviemaker/">автор видео</a></li>
-            </ul>
-            <div class="header__burger" id="burger">
-                <span></span>
-            </div>
-        </nav>
+      <h1><a href="/">Матвей Бухарцев - это</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">кто?</a></li>
+          <li><a href="/programmer/">программист</a></li>
+          <li><a href="/moviemaker/">автор видео</a></li>
+        </ul>
+        <div class="header__burger" id="burger">
+          <span></span>
+        </div>
+      </nav>
     </header>
 
     <main>
-
-
-
-    <section id="about" class="about">
+      <section id="about" class="about">
         <div class="about_text">
-            <p><strong>Матвей Бухарцев</strong> занимается разработкой с 7 класса. Именно тогда он написал первую программу на Паскале. С тех пор увлечение переросло в профессию: Матвей <a href="#projects" class="link_uni">разрабатывает</a> программное обеспечение и веб-сайты разного уровня сложности. Получая опыт, Матвей сразу его передаёт: он ведёт YouTube-канал, на котором рассказывает о программировании.</p>
+          <p>
+            <strong>Матвей Бухарцев</strong> занимается разработкой с 7 класса.
+            Именно тогда он написал первую программу на Паскале. С тех пор
+            увлечение переросло в профессию: Матвей
+            <a href="#projects" class="link_uni">разрабатывает</a> программное
+            обеспечение и веб-сайты разного уровня сложности. Получая опыт,
+            Матвей сразу его передаёт: он ведёт YouTube-канал, на котором
+            рассказывает о программировании.
+          </p>
         </div>
-        <img src="/source/img/programmer.jpg" alt="Matvey Bouhartsev is programmer" id="imgAva">
-    </section>
+        <img
+          src="/source/img/programmer.jpg"
+          alt="Matvey Bouhartsev is programmer"
+          id="imgAva"
+        />
+      </section>
 
-    <section id="facets">
+      <section id="facets">
         Я - <span id="typewriter">программист</span>
-    </section>
+      </section>
 
-	<section id="lang_prog">
-		<h2>Языки разработки, которыми владеет Матвей Бухарцев</h2>
+      <section id="lang_prog">
+        <h2>Языки разработки, которыми владеет Матвей Бухарцев</h2>
+        <input
+          type="checkbox"
+          name="levels_visible"
+          id="levels_visible"
+          hidden
+        />
         <div class="levels_prog">
+          <label for="levels_visible"></label>
+          <div class="levels_prog_content">
             <strong>Какими бывают программисты?</strong>
             <ol>
-                <li>Beginner</li>
-                <li>Intern</li>
-                <li>Junior</li>
-                <li>Middle</li>
-                <li>Senior</li>
+              <li>Beginner</li>
+              <li>Intern</li>
+              <li>Junior</li>
+              <li>Middle</li>
+              <li>Senior</li>
             </ol>
+          </div>
         </div>
         <table>
-        	<tr><th>Язык</th><th>Уровень владения</th></tr>
-        	<tr><td>C++</td><td>Intern</td></tr>
-        	<tr><td>C#</td><td>Intern</td></tr>
-        	<tr><td>Java</td><td>Beginner</td></tr>
-        	<tr><td>Pascal</td><td>Beginner</td></tr>
-        	<tr><td>Python</td><td>Intern</td></tr>
-        	<tr><td>HTML</td><td>Intern</td></tr>
-        	<tr><td>CSS</td><td>Intern</td></tr>
-        	<tr><td>JavaScript</td><td>Intern</td></tr>
-            <tr><td>TypeScript</td><td>Beginner</td></tr>
-            <tr><td>PHP</td><td>Intern</td></tr>
+          <tr>
+            <th>Язык</th>
+            <th>Уровень владения</th>
+          </tr>
+          <tr>
+            <td>C++</td>
+            <td>Intern</td>
+          </tr>
+          <tr>
+            <td>C#</td>
+            <td>Intern</td>
+          </tr>
+          <tr>
+            <td>Java</td>
+            <td>Beginner</td>
+          </tr>
+          <tr>
+            <td>Pascal</td>
+            <td>Beginner</td>
+          </tr>
+          <tr>
+            <td>Python</td>
+            <td>Intern</td>
+          </tr>
+          <tr>
+            <td>HTML</td>
+            <td>Junior</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Junior</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Junior</td>
+          </tr>
+          <tr>
+            <td>TypeScript</td>
+            <td>Intern</td>
+          </tr>
+          <tr>
+            <td>PHP</td>
+            <td>Intern</td>
+          </tr>
         </table>
-    </section>
+      </section>
 
-	<section id="projects">
+      <section id="projects">
         <h2>Проекты</h2>
         <!-- <p>Скоро здесь будет список разработок Матвея Бухарцева, а пока - <a href="//github.com/bouhartsev" class="link_uni" target="_blank">ссылка на GitHub</a>.</p> -->
         <!-- <a href="./projects/">Все проекты</a> -->
-        <a href="https://github.com/bouhartsev" class="link_projects" target="_blank">Все проекты</a>
-    </section>
+        <a
+          href="https://github.com/bouhartsev"
+          class="link_projects"
+          target="_blank"
+          >Все проекты</a
+        >
+      </section>
 
-	<section id="videos">
-		<h2>Заметки программиста</h2>
-		<p>Влог о программах и сайтах: разборы, туториалы, обучения по написанию, обзоры и многое другое. <a href="https://youtube.com/playlist?list=PLHPj2lb9CyAHXsEr0uDNIZeZg_lkVA_5x" class="link_uni" target="_blank">#Заметки_программиста</a></p>
-		<div class="container">
-			<iframe width="640" height="360" src="https://www.youtube.com/embed/f4tUAnCCeFw?color=white" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Видео не отображается. Сообщите об ошибке Матвею Бухарцеву, пожалуйста.</iframe>
-			<iframe width="640" height="360" src="https://www.youtube.com/embed/videoseries?list=PLHPj2lb9CyAHXsEr0uDNIZeZg_lkVA_5x&color=white" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>Видео не отображается. Сообщите об ошибке Матвею Бухарцеву, пожалуйста.</iframe>
-		</div>
-	</section>
+      <section id="videos">
+        <h2>Заметки программиста</h2>
+        <p>
+          Влог о программах и сайтах: разборы, туториалы, обучения по написанию,
+          обзоры и многое другое.
+          <a
+            href="https://youtube.com/playlist?list=PLHPj2lb9CyAHXsEr0uDNIZeZg_lkVA_5x"
+            class="link_uni"
+            target="_blank"
+            >#Заметки_программиста</a
+          >
+        </p>
+        <div class="container">
+          <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/f4tUAnCCeFw?color=white"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            >Видео не отображается. Сообщите об ошибке Матвею Бухарцеву,
+            пожалуйста.</iframe
+          >
+          <iframe
+            width="640"
+            height="360"
+            src="https://www.youtube.com/embed/videoseries?list=PLHPj2lb9CyAHXsEr0uDNIZeZg_lkVA_5x&color=white"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            >Видео не отображается. Сообщите об ошибке Матвею Бухарцеву,
+            пожалуйста.</iframe
+          >
+        </div>
+      </section>
     </main>
 
     <footer>
-        <a href="/#contacts">Контакты</a>
-        <a href="/sitemap">Карта сайта</a>
-        <div id="copyright">© Matvey Bouhartsev, 2022</div>
+      <a href="/#contacts">Контакты</a>
+      <a href="/sitemap">Карта сайта</a>
+      <div id="copyright">© Matvey Bouhartsev, 2022</div>
     </footer>
-</body>
+  </body>
 </html>
