@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     console.log("loading...");
-	NotReady();
+	// NotReady();
 
     isBurger();
     window.addEventListener('resize', isBurger);
