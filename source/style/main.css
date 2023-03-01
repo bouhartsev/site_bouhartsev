@@ -64,6 +64,10 @@ html {
 	font-size: 1.5em;
 }
 
+/* a:focus-within {
+	outline: red;
+} */
+
 body {
 	width: 100vw;
 	display: flex;
@@ -88,6 +92,8 @@ header {
 
 	z-index: 100001;
 	font-size: 1.1em;
+
+	box-shadow: var(--color-black) 0 0 5px;
 }
 
 header nav {
@@ -107,6 +113,7 @@ header ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
 
 	width: 100%;
 }
@@ -161,6 +168,55 @@ header:not(.headerFixed) h1 {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.header__lang-container {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 100;
+}
+.header__lang {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 0.75rem;
+	width: 7em;
+	height: 3em;
+	color: inherit;
+	box-shadow: currentColor 0 0 0.8em -0.4em;
+	margin: 5px auto;
+	z-index: 1;
+	padding: 0;
+	border: none;
+	border-radius: 0.2em;
+	cursor: pointer;
+	position: relative;
+}
+.header__lang::before {
+	content: "";
+	height: 80%;
+	vertical-align: middle;
+	width: 40%;
+	background: currentColor;
+	border-radius: 0.2em;
+	top: 10%;
+	left: 5%;
+	transition: left var(--transition-time);
+	position: absolute;
+	z-index: -1;
+}
+.header__lang[aria-checked="true"]::before {
+	left: 55%;
+}
+.header__lang[aria-checked="false"]>span{
+	transition: all var(--transition-time);
+}
+.header__lang[aria-checked="false"]>span:first-child {
+	filter: invert(100%);
+}
+.header__lang[aria-checked="true"]>span:last-child {
+	filter: invert(100%);
 }
 
 body::before {
