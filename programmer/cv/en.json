@@ -1,0 +1,20 @@
+{
+    "meta_lang": "en",
+    "meta_title": "Bouhartsev CV programmer",
+    "h_name": "Matvey Bouhartsev",
+    "h_dev": "Developer",
+    "h_about": "About me",
+    "p_about1": "Hello! My name is Matvey, I am a developer and a moviemaker. I have experience in web and software development in more than 10 different languages.",
+    "p_about2": "I became involved in this work in the 7th grade, when I wrote my first program. Since then, the hobby has grown into a profession. I also like to share my knowledge: I run a YouTube channel where I talk about programming.",    
+    "h_skills": "My skills",
+    "skills_soft": "Software Development",
+    "skills_games": "Game Development",
+    "skills_mobile": "Mobile Development",
+    "skills_frontend": "Frontend Web Development",
+    "skills_backend": "Backend Web Development",
+    "h_contacts": "Contact me",
+    "h_work": "Work experience",
+    "h_work1": "Kinopoisk (Yandex)",
+    "h_work2": "Yandex.Eda",
+    "h_edu": "Education"
+}

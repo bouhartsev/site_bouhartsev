@@ -1,4 +1,4 @@
-const i18n = {
+window.i18n = {
   allowLang: ["en", "ru"],
   defaultLang: "ru", // language of the HTML page
   defaultI18N: null, // object with default content
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   isBurger();
   window.addEventListener("resize", isBurger);
-  document.querySelector("#burger").addEventListener("click", clickBurger);
+  document.querySelector("#burger")?.addEventListener("click", clickBurger);
 
   // Для вызова использовать ссылку - <a href="popup_id" data-change-popup>Text</a>
   function togglePopup(event, target_id = null) {
@@ -229,17 +229,19 @@ document.addEventListener("DOMContentLoaded", function () {
     .forEach((el) => el.addEventListener("click", togglePopup));
   togglePopup(null, window.location.hash.split("?")[0]);
 
+  window.i18n.setLang();
+  // add button to DOM programmaticaly
   const change_lang = document.querySelector("#change_lang");
-  change_lang.addEventListener("click", (e) => {
+  change_lang?.setAttribute(
+    "aria-checked",
+    String(i18n.currentLang !== i18n.defaultLang)
+  );
+  change_lang?.addEventListener("click", (e) => {
     const new_value = !(change_lang.getAttribute("aria-checked") === "true");
-    if (new_value === false) i18n.setLang("ru");
-    else i18n.setLang("en");
-    i18n.fetchLang();
+    if (new_value === false) window.i18n.setLang("ru");
+    else window.i18n.setLang("en");
+    window.i18n.fetchLang();
     change_lang.setAttribute("aria-checked", String(!!new_value));
   });
-  change_lang.setAttribute(
-    "aria-checked",
-    String(i18n.setLang() !== i18n.defaultLang)
-  );
-  i18n.fetchLang();
+  window.i18n.fetchLang();
 });
