@@ -1,0 +1,60 @@
+:root {
+    --transition-time: 0.2s ease-in-out;
+}
+
+.btn__lang {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 0.75rem;
+    width: 7em;
+    height: 3em;
+    color: inherit;
+    box-shadow: currentColor 0 0 0.8em -0.4em;
+    margin: 5px auto;
+    padding: 0;
+    border: none;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+.btn__lang::before {
+    content: "";
+    height: 80%;
+    vertical-align: middle;
+    width: 40%;
+    background: currentColor;
+    border-radius: 0.2em;
+    top: 10%;
+    left: 5%;
+    transition: left var(--transition-time);
+    position: absolute;
+    z-index: -1;
+}
+
+.btn__lang[aria-checked="true"]::before {
+    left: 55%;
+}
+
+.btn__lang[aria-checked="false"]>span {
+    transition: all var(--transition-time);
+}
+
+.btn__lang[aria-checked="false"]>span:first-child {
+    filter: invert(100%);
+}
+
+.btn__lang[aria-checked="true"]>span:last-child {
+    filter: invert(100%);
+}
+
+@media print {
+    .btn__lang {
+        display: none;
+    }
+}

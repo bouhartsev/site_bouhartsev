@@ -1,12 +1,11 @@
+@import url(./index.css);
+
 @font-face {
     font-family: 'Commissioner';
     src: url('/source/fonts/Commissioner/Commissioner-VariableFont_wght.ttf') format('truetype');
 }
 
 :root {
-    /* from main */
-    --transition-time: 0.2s ease-in-out;
-
     --fg-dark: #2d343a;
     --fg-normal: #3e4950;
     --fg-light: #6e88a3;

@@ -41,7 +41,7 @@ window.i18n = {
   },
 
   replaceLang(i18nLangs) {
-    console.log(i18nLangs)
+    console.log(i18nLangs);
     if (!i18nLangs) return;
     const isDefaultNeeded =
       this.currentLang != this.defaultLang && !this.defaultI18N;
@@ -58,7 +58,9 @@ window.i18n = {
         element[element.dataset.i18n_target] = i18nLangs[element.dataset.i18n];
       } else {
         if (isDefaultNeeded)
-              this.defaultI18N[element.dataset.i18n] = !!element.placeholder ? element.placeholder : element.innerHTML;
+          this.defaultI18N[element.dataset.i18n] = !!element.placeholder
+            ? element.placeholder
+            : element.innerHTML;
         switch (element.tagName.toLowerCase()) {
           case "input":
           case "textarea":
@@ -231,7 +233,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.i18n.setLang();
   // add button to DOM programmaticaly
-  const change_lang = document.querySelector("#change_lang");
+  const temp = document.createElement("aside");
+  temp.innerHTML = `
+    <button
+      id="change_lang"
+      class="btn__lang"
+      title="Translate the site to English"
+      aria-label="language"
+      role="switch"
+      aria-checked="false"
+      data-i18n="translate_title"
+      data-i18n_target="title"
+    ><span>RU</span><span>EN</span></button>
+  `;
+  const change_lang = temp.firstElementChild;
   change_lang?.setAttribute(
     "aria-checked",
     String(i18n.currentLang !== i18n.defaultLang)
@@ -243,5 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.i18n.fetchLang();
     change_lang.setAttribute("aria-checked", String(!!new_value));
   });
+  document.body.prepend(change_lang);
   window.i18n.fetchLang();
 });
