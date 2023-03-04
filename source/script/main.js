@@ -1,6 +1,7 @@
 const i18n = {
   allowLang: ["en", "ru"],
-  defaultLang: "ru",
+  defaultLang: "ru", // language of the HTML page
+  defaultI18N: null, // object with default content
   currentLang: "", // set default other then lang on page
   langPath: "./",
 
@@ -19,10 +20,8 @@ const i18n = {
         : this.defaultLang;
       lang = lang.substring(0, 2).toLowerCase();
     }
-    console.log(lang);
     if (!!lang) {
       localStorage.setItem("lang", lang);
-      //   if (!url.searchParams.has("lang"))
       if (lang != this.defaultLang) url.searchParams.set("lang", lang);
       else url.searchParams.delete("lang");
       window.history.replaceState(
@@ -32,7 +31,6 @@ const i18n = {
           url.searchParams.toString() ? "?" + url.searchParams.toString() : ""
         }`
       );
-      // location.search = location.search+"lang="+lang
     }
     this.currentLang = lang;
     return lang;
@@ -43,15 +41,24 @@ const i18n = {
   },
 
   replaceLang(i18nLangs) {
+    console.log(i18nLangs)
     if (!i18nLangs) return;
+    const isDefaultNeeded =
+      this.currentLang != this.defaultLang && !this.defaultI18N;
+    if (isDefaultNeeded) this.defaultI18N = new Object();
 
-    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+    document.querySelectorAll("[data-i18n]").forEach((element) => {
       if (!i18nLangs[element.dataset.i18n]) return;
 
       if (element.dataset.i18n_target) {
+        if (isDefaultNeeded)
+          this.defaultI18N[element.dataset.i18n] =
+            element[element.dataset.i18n_target];
         // to replace image src and etc.
         element[element.dataset.i18n_target] = i18nLangs[element.dataset.i18n];
       } else {
+        if (isDefaultNeeded)
+              this.defaultI18N[element.dataset.i18n] = !!element.placeholder ? element.placeholder : element.innerHTML;
         switch (element.tagName.toLowerCase()) {
           case "input":
           case "textarea":
@@ -64,12 +71,17 @@ const i18n = {
   },
 
   fetchLang() {
-    if (!this.currentLang) return; // || this.currentLang == this.defaultLang
+    if (!this.currentLang) return;
+
+    if (this.currentLang == this.defaultLang) {
+      if (!this.defaultI18N) return;
+      this.replaceLang(this.defaultI18N);
+      return;
+    } else if (!!this.defaultI18N) this.defaultI18N = null;
 
     fetch(this._getLangUrl())
       .then((response) =>
         response.json().then((res) => {
-          this.replaceLang(res);
           this.replaceLang(res);
         })
       )
@@ -220,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const change_lang = document.querySelector("#change_lang");
   change_lang.addEventListener("click", (e) => {
     const new_value = !(change_lang.getAttribute("aria-checked") === "true");
-    console.log(new_value);
     if (new_value === false) i18n.setLang("ru");
     else i18n.setLang("en");
     i18n.fetchLang();
