@@ -187,9 +187,9 @@ progress::-webkit-progress-value {
 }
 
 @media print {
-
     /* styles to expand background to all page */
     body {
+        margin: 0;
         min-height: 100%;
     }
 }
