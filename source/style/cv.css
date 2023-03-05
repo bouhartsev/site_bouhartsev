@@ -120,7 +120,6 @@ ul {
 }
 
 li {
-    /* --margin-size: calc(( 1.3 / 2 + 0.8 / 2 ) * 0.3 * 1.5rem); */
     margin-bottom: 3em;
     position: relative;
 }
@@ -180,6 +179,23 @@ progress::-webkit-progress-value {
     aspect-ratio: 1;
     object-fit: cover;
     object-position: 0 0;
+}
+
+.exp_part {
+    --padding-size: calc((1.3 + 0.8 + 1 + 0.5) * 0.8 * 1.5rem);
+    padding-left: var(--padding-size);
+}
+
+.subtitles {
+    width: 100%;
+    display: flex;
+}
+.subtitles>* {
+    flex: 1 1 100%;
+}
+
+.subtitles [class*="fa-"]::before {
+    padding: 0;
 }
 
 @media screen {

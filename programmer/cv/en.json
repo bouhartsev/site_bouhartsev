@@ -14,8 +14,14 @@
     "skills_backend": "Backend Web Development",
     "h_contacts": "Contact me",
     "h_work": "Work experience",
-    "h_work1": "Kinopoisk (Yandex)",
-    "h_work2": "Yandex.Eda",
+    "h_work1": "Frontend Intern",
+    "work1_place": "Kinopoisk (Yandex)",
+    "work1_time": "18 Oct 2022 - 27 Feb 2023",
+    "work1_desc": "",
+    "h_work2": "Frontend developer",
+    "work2_place": "Yandex.Eat",
+    "work2_time": "7 March 2023 - Current",
+    "work2_desc": "",
     "h_edu": "Education",
     "h_langs": "Languages"
 }
