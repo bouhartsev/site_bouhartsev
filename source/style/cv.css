@@ -186,6 +186,10 @@ progress::-webkit-progress-value {
     padding-left: var(--padding-size);
 }
 
+h3 {
+    margin-bottom: 0.5em;
+}
+
 .subtitles {
     width: 100%;
     display: flex;
