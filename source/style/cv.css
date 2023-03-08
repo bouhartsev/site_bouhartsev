@@ -1,15 +1,12 @@
 @import url(./index.css);
 
-@font-face {
-    font-family: 'Commissioner';
-    src: url('/source/fonts/Commissioner/Commissioner-VariableFont_wght.ttf') format('truetype');
-}
-
 :root {
     --fg-dark: #2d343a;
     --fg-normal: #3e4950;
     --fg-light: #6e88a3;
     --white: white;
+
+    --padding-size: calc((1.3 + 0.8 + 1 + 0.5) * 0.8 * 1.5rem);
 }
 
 html {
@@ -112,7 +109,6 @@ aside {
 }
 
 ul {
-    --padding-size: calc((1.3 + 0.8 + 1 + 0.5) * 0.8 * 1.5rem);
     padding-left: var(--padding-size);
     margin: 0;
     list-style: none;
@@ -120,8 +116,12 @@ ul {
 }
 
 li {
-    margin-bottom: 3em;
+    margin-bottom: 1.5em;
     position: relative;
+}
+
+.skills li {
+    margin-bottom: 3em;
 }
 
 li[class*="fa-"]::before {
@@ -157,23 +157,6 @@ progress::-webkit-progress-value {
     border-radius: 1em;
 }
 
-/* li[data-progress]::after {
-    content: attr(data-progress);
-    position: absolute;
-    bottom: -1.5rem;
-    left: 0;
-    background: var(--white) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1000px' height='20px'><rect fill='red' x='0' y='0' width='100%' height='100%'/></svg>");
-    width: 100%;
-    height: 0.625rem;
-    border-radius: 1em;
-    background-repeat: no-repeat;
-    background-size: 50% 100%;
-} */
-
-/* p {
-    text-align: justify;
-} */
-
 .photo {
     border-radius: 100%;
     width: 100%;
@@ -183,7 +166,6 @@ progress::-webkit-progress-value {
 }
 
 .exp_part {
-    --padding-size: calc((1.3 + 0.8 + 1 + 0.5) * 0.8 * 1.5rem);
     padding-left: var(--padding-size);
 }
 
@@ -208,11 +190,48 @@ h3~p {
     padding: 0;
 }
 
-@media screen {
-    /* styles for buttons */
+.langs figure {
+    display: inline-block;
+    width: 20%;
+    margin: 0 0 1em var(--padding-size);
+    text-align: center;
+    vertical-align: top;
+}
+
+.langs img {
+    border-radius: 5%;
+    border: 5px solid var(--fg-dark);
+}
+
+.langs figcaption {
+    --stars: 0;
+
+    position: relative;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.langs figcaption::after {
+    --star-size: 1.5rem;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: calc(-1 * var(--star-size) - 0.5rem);
+    transform: translateX(-50%);
+
+    height: var(--star-size);
+    width: calc(var(--star-size) * var(--stars));
+    background: url("/source/img/star.svg");
+    background-size: var(--star-size)  var(--star-size);
+
+    /* width: 20%; */
 }
 
 @media print {
+    #change_lang {
+        display: none;
+    }
 
     /* styles to expand background to all page */
     body {

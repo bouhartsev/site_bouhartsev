@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Commissioner';
+    src: url('/source/fonts/Commissioner/Commissioner-VariableFont_wght.ttf') format('truetype');
+}
+
 :root {
     --transition-time: 0.2s ease-in-out;
 }
