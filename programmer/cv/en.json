@@ -23,5 +23,13 @@
     "work2_time": "7 March 2023 - Current",
     "work2_desc": "",
     "h_edu": "Education",
-    "h_langs": "Languages"
+    "edu1_place": "School of Self-Determination",
+    "edu1_time": "1 Sep 2009 - 19 July 2020",
+    "edu1_desc" "I graduated from the school №734 with the highest possible grades, a red diploma and two gold medals. During the education process I tried to expand my knowledge in various academic fields. I participated in olympiads and school-wide events, which allowed me to improve my hard and soft skills."
+    "edu2_place": "Moscow Polytechnic University",
+    "edu2_time": "1 Sep 2020 - Current",
+    "edu2_desc": "",
+    "h_langs": "Languages",
+    "langs1": "English",
+    "langs2": "Russian"
 }
