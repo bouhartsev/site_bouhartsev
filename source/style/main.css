@@ -3,6 +3,8 @@
 /*Неиспользованный:*/
 /*font-family: 'Amatic SC', cursive;*/
 
+@import url("./index.css");
+
 /*    Local fonts import*/
 @font-face {
 	font-family: 'Alice';
@@ -22,12 +24,6 @@
 }
 
 @font-face {
-	font-family: 'Commissioner';
-	src: url('/source/fonts/Commissioner/Commissioner-VariableFont_wght.ttf') format('truetype');
-}
-
-
-@font-face {
 	font-family: 'YouTubeSansDark';
 	src: url('/source/fonts/YouTubeSansDark/YouTubeSansDark-Black.ttf') format('truetype');
 }
@@ -38,8 +34,6 @@
 }
 
 :root {
-	--transition-time: 0.2s ease-in-out;
-
 	--color-white: #f5f5f5;
 	--color-black: #1a1a1a;
 
@@ -63,6 +57,10 @@ html {
 
 	font-size: 1.5em;
 }
+
+/* a:focus-within {
+	outline: red;
+} */
 
 body {
 	width: 100vw;
@@ -88,6 +86,8 @@ header {
 
 	z-index: 100001;
 	font-size: 1.1em;
+
+	box-shadow: var(--color-black) 0 0 5px;
 }
 
 header nav {
@@ -107,6 +107,7 @@ header ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
 
 	width: 100%;
 }
@@ -276,7 +277,8 @@ a {
 	color: var(--color-link);
 }
 
-.link_uni:focus-visible, .link_uni_cont:focus-visible {
+.link_uni:focus-visible,
+.link_uni_cont:focus-visible {
 	outline: none;
 }
 
@@ -324,7 +326,7 @@ a {
 .link_uni:hover::after,
 .link_uni_cont:hover>span::after,
 .link_uni:focus-visible::after,
-.link_uni_cont:focus-visible>span::after  {
+.link_uni_cont:focus-visible>span::after {
 	width: 50%;
 }
 

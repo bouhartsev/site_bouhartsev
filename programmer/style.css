@@ -66,7 +66,6 @@ section {
 	text-align: center;
 	font-size: 3.5vw;
 	position: relative;
-	margin: -1px 0;
 	padding: 2em;
 }
 
@@ -228,12 +227,12 @@ th, td {
 		z-index: -1;
 	}
 
-	#levels_visible:not(:checked) + .levels_prog>label {
+	input[name="levels_visible"]:not(:checked) + .levels_prog>label {
 		border-radius: var(--circle-size);
 		box-shadow: 0px 0px 10px var(--color-white);
 	}
 
-	#levels_visible:not(:checked) + .levels_prog>.levels_prog_content {
+	input[name="levels_visible"]:not(:checked) + .levels_prog>.levels_prog_content {
 		top: calc(var(--circle-size) / 2);
 		right: calc(var(--circle-size) / 2);
 		height: 0;
@@ -241,7 +240,7 @@ th, td {
 		overflow: hidden;
 	}
 	
-	#levels_visible:checked + .levels_prog>.levels_prog_content {
+	input[name="levels_visible"]:checked + .levels_prog>.levels_prog_content {
 		right: 0;
 		top: 0;
 		height: fit-content;
@@ -249,7 +248,7 @@ th, td {
 		padding: var(--circle-size);
 		
 	}
-	#levels_visible:checked + .levels_prog>label::before {
+	input[name="levels_visible"]:checked + .levels_prog>label::before {
 		content: "x";
 	}
 }

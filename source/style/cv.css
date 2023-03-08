@@ -1,0 +1,241 @@
+@import url(./index.css);
+
+:root {
+    --fg-dark: #2d343a;
+    --fg-normal: #3e4950;
+    --fg-light: #6e88a3;
+    --white: white;
+
+    --padding-size: calc((1.3 + 0.8 + 1 + 0.5) * 0.8 * 1.5rem);
+}
+
+html {
+    background: #282828;
+
+    font-family: 'Commissioner';
+    font-size: 32px;
+}
+
+body {
+    width: 2480px;
+    background: var(--white);
+    color: var(--fg-dark);
+    box-shadow: black 5px 5px 1rem;
+    margin: 25px auto;
+
+    display: grid;
+    grid-template-columns: 900px auto;
+    grid-auto-rows: fit-content;
+    grid-auto-flow: row dense;
+}
+
+header {
+    background: var(--fg-dark);
+    color: var(--white);
+    text-align: center;
+
+    padding: 110px 215px;
+    height: fit-content;
+}
+
+aside {
+    grid-column: 1;
+    grid-row: span 2;
+
+    background: var(--fg-normal);
+    color: var(--white);
+
+    padding: 50px 100px;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+main {
+    grid-row: span 2;
+
+    padding: 110px 100px 50px 150px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1,
+h2:not(.whois),
+h3 {
+    text-transform: uppercase;
+}
+
+[class*="fa-"]::before {
+    display: inline-block;
+    border-radius: 100%;
+    text-align: center;
+    font-family: var(--fa-style-family-classic);
+
+    width: 1.3em;
+    height: 1.3em;
+    line-height: 1.3;
+    font-size: 0.8em;
+    padding: 0.8em;
+    margin-right: 0.5em;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h2[class*="fa-"]::before {
+    color: var(--white);
+    background-color: var(--fg-dark);
+}
+
+.whois {
+    font-weight: normal;
+}
+
+main.h2 {
+    font-size: 1.875rem;
+}
+
+aside {
+    font-size: 1.125rem;
+}
+
+ul {
+    padding-left: var(--padding-size);
+    margin: 0;
+    list-style: none;
+    margin: 2em 0 5em;
+}
+
+li {
+    margin-bottom: 1.5em;
+    position: relative;
+}
+
+.skills li {
+    margin-bottom: 3em;
+}
+
+li[class*="fa-"]::before {
+    position: absolute;
+    top: 50%;
+    left: calc(-1 * var(--padding-size));
+    transform: translate(15%, -50%);
+
+    color: var(--fg-dark);
+    background-color: var(--white);
+}
+
+progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1.5em;
+    width: 100%;
+
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0.625rem;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background: var(--white);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--fg-light);
+    border-radius: 1em;
+}
+
+.photo {
+    border-radius: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+.exp_part {
+    padding-left: var(--padding-size);
+}
+
+h3 {
+    margin-bottom: 0.5em;
+}
+
+h3~p {
+    margin-top: 0.5em;
+}
+
+.subtitles {
+    width: 100%;
+    display: flex;
+}
+
+.subtitles>* {
+    flex: 1 1 100%;
+}
+
+.subtitles [class*="fa-"]::before {
+    padding: 0;
+}
+
+.langs figure {
+    display: inline-block;
+    width: 20%;
+    margin: 0 0 1em var(--padding-size);
+    text-align: center;
+    vertical-align: top;
+}
+
+.langs img {
+    border-radius: 5%;
+    border: 5px solid var(--fg-dark);
+}
+
+.langs figcaption {
+    --stars: 0;
+
+    position: relative;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.langs figcaption::after {
+    --star-size: 1.5rem;
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: calc(-1 * var(--star-size) - 0.5rem);
+    transform: translateX(-50%);
+
+    height: var(--star-size);
+    width: calc(var(--star-size) * var(--stars));
+    background: url("/source/img/star.svg");
+    background-size: var(--star-size)  var(--star-size);
+
+    /* width: 20%; */
+}
+
+@media print {
+    #change_lang {
+        display: none;
+    }
+
+    /* styles to expand background to all page */
+    body {
+        margin: 0;
+        min-height: 100%;
+    }
+}
