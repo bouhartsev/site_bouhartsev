@@ -1,11 +1,19 @@
 {
-    "meta_lang": "en",
-    "meta_title": "Matvey Bouhartsev is who?",
-    "header_MBis": "Matvey Bouhartsev is",
-    "header_who": "who?",
-    "header_programmer": "developer",
-    "header_moviemaker": "moviemaker",
-    "translate_title": "Перевести страницу на русский",
-    "h_contacts": "Contacts",
-    "h_cv": "Resume"
+  "meta_lang": "en",
+  "meta_title": "Matvey Bouhartsev is who?",
+  "header_MBis": "Matvey Bouhartsev is",
+  "header_who": "who?",
+  "header_programmer": "developer",
+  "header_moviemaker": "moviemaker",
+  "translate_title": "Перевести страницу на русский",
+  "about": "<p><strong>Matvey Bouhartsev</strong> is a programmer and a moviemaker. He has experience in web development and software engineering in more than 10 different programming languages. He graduated from school with a red diploma and two gold medals. Since 2020, he has been a student at Moscow Polytechnic University.</p><p>In addition, Matvey graduated from the music school and the school of programmers with honors. At the age of 3, Matvey became the person of the year according to Time magazine.</p><p>Now Matvey Bouhartsev's main occupation is development, but he has not abandoned his hobbies. You can follow Matvey's activities <a href='#contacts' class='link_uni'>on social networks</a>.</p>",
+  "h_contacts": "Contacts",
+  "contacts_dev": "Programmer",
+  "contacts_movie": "Moviemaker",
+  "contacts_else": "On everything else",
+  "contacts_google": "For communications via Google",
+  "contacts_vk": "VK",
+  "h_cv": "Resume",
+  "cv_dev": "Resume (programmer)",
+  "cv_movie": "Resume (moviemaker)"
 }

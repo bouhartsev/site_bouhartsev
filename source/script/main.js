@@ -1,5 +1,5 @@
 window.i18n = {
-  allowLang: ["en", "ru"],
+  allowLang: ["ru", "en"],
   defaultLang: "ru", // language of the HTML page
   defaultI18N: null, // object with default content
   currentLang: "", // set default other then lang on page
@@ -41,8 +41,7 @@ window.i18n = {
   },
 
   replaceLang(i18nLangs) {
-    console.log(i18nLangs);
-    if (!i18nLangs) return;
+    if (!i18nLangs) return Promise.reject();
     const isDefaultNeeded =
       this.currentLang != this.defaultLang && !this.defaultI18N;
     if (isDefaultNeeded) this.defaultI18N = new Object();
@@ -73,21 +72,20 @@ window.i18n = {
   },
 
   fetchLang() {
-    if (!this.currentLang) return;
+    if (!this.currentLang) return Promise.reject();
 
     if (this.currentLang == this.defaultLang) {
-      if (!this.defaultI18N) return;
+      if (!this.defaultI18N) return Promise.reject();
       this.replaceLang(this.defaultI18N);
-      return;
+      return Promise.resolve();
     } else if (!!this.defaultI18N) this.defaultI18N = null;
 
-    fetch(this._getLangUrl())
-      .then((response) =>
-        response.json().then((res) => {
-          this.replaceLang(res);
-        })
-      )
-      .catch((err) => console.error(err));
+    return fetch(this._getLangUrl()).then((response) =>
+      response.json().then((res) => {
+        this.replaceLang(res);
+      })
+    );
+    // .catch((err) => console.error(err));
   },
 };
 
@@ -231,7 +229,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .forEach((el) => el.addEventListener("click", togglePopup));
   togglePopup(null, window.location.hash.split("?")[0]);
 
-  window.i18n.setLang();
   // add button to DOM programmaticaly
   const temp = document.createElement("aside");
   temp.innerHTML = `
@@ -247,17 +244,27 @@ document.addEventListener("DOMContentLoaded", function () {
     ><span>RU</span><span>EN</span></button>
   `;
   const change_lang = temp.firstElementChild;
-  change_lang?.setAttribute(
-    "aria-checked",
-    String(i18n.currentLang !== i18n.defaultLang)
-  );
+  window.i18n.setLang();
+  window.i18n
+    .fetchLang()
+    .then(() =>
+      change_lang?.setAttribute(
+        "aria-checked",
+        String(i18n.currentLang !== i18n.defaultLang)
+      )
+    )
+    .catch(() => window.i18n.setLang(new_value === false ? "en" : "ru"));
+  // change_lang?.setAttribute(
+  //   "aria-checked",
+  //   String(i18n.currentLang !== i18n.defaultLang)
+  // );
   change_lang?.addEventListener("click", (e) => {
     const new_value = !(change_lang.getAttribute("aria-checked") === "true");
-    if (new_value === false) window.i18n.setLang("ru");
-    else window.i18n.setLang("en");
-    window.i18n.fetchLang();
-    change_lang.setAttribute("aria-checked", String(!!new_value));
+    window.i18n.setLang(new_value === false ? "ru" : "en");
+    window.i18n
+      .fetchLang()
+      .then(() => change_lang.setAttribute("aria-checked", String(!!new_value)))
+      .catch(() => window.i18n.setLang(new_value === false ? "en" : "ru"));
   });
   document.body.prepend(change_lang);
-  window.i18n.fetchLang();
 });
