@@ -1,171 +1,165 @@
 <!DOCTYPE html>
 <html lang="ru" data-i18n="meta_lang" data-i18n_target="lang">
-  <head>
-    <meta charset="utf-8" />
 
-    <title data-i18n="meta_title">Бухарцев резюме программист</title>
+<head>
+  <meta charset="utf-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1a1a1a" />
+  <title data-i18n="meta_title">Бухарцев резюме программист</title>
 
-    <!--    Styles-->
-    <link
-      rel="stylesheet"
-      href="/source/fonts/fontawesome-free-6.2.0-web/css/solid.css"
-    />
-    <link
-      rel="stylesheet"
-      href="/source/fonts/fontawesome-free-6.2.0-web/css/fontawesome.min.css"
-    />
-    <link rel="stylesheet" href="/source/style/cv.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a1a1a" />
 
-    <!--    libraries-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <!--    Styles-->
+  <link rel="stylesheet" href="/source/fonts/fontawesome-free-6.2.0-web/css/solid.css" />
+  <link rel="stylesheet" href="/source/fonts/fontawesome-free-6.2.0-web/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="/source/style/cv.css" />
 
-    <!--    Scripts-->
-    <script defer src="/source/script/main.js" type="text/javascript"></script>
-    <script defer src="/source/script/cv.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <noscript>
-      Ваш браузер не
-      <a href="https://enable-javascript.com/ru">поддерживает</a> скрипты!
-      <br />
-      Your browser does not
-      <a href="https://enable-javascript.com/ru">support</a> JavaScript!
-    </noscript>
+  <!--    libraries-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
-    <!-- Main CV -->
-    <header>
-      <img src="/source/img/cv.jpg" alt="Photo" class="photo" />
-      <h1 data-i18n="h_name">Матвей Бухарцев</h1>
-      <h2 class="whois" data-i18n="h_dev">Разработчик</h2>
-    </header>
-    <aside>
-      <section>
-        <h2 class="fa-user" data-i18n="h_about">Обо мне</h2>
-        <p data-i18n="p_about1">
-          Здравствуйте! Меня зовут Матвей, я разработчик и автор видео. Имею
-          опыт веб-разработки и создания программного обеспечения более чем на
-          10 различных языках.
+  <!--    Scripts-->
+  <script defer src="/source/script/main.js" type="text/javascript"></script>
+  <script defer src="/source/script/cv.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <noscript>
+    Ваш браузер не
+    <a href="https://enable-javascript.com/ru">поддерживает</a> скрипты!
+    <br />
+    Your browser does not
+    <a href="https://enable-javascript.com/ru">support</a> JavaScript!
+  </noscript>
+
+  <!-- Main CV -->
+  <header>
+    <img src="/source/img/cv.jpg" alt="Photo" class="photo" />
+    <h1 data-i18n="h_name">Матвей Бухарцев</h1>
+    <h2 class="whois" data-i18n="h_dev">Разработчик</h2>
+  </header>
+  <aside>
+    <section>
+      <h2 class="fa-user" data-i18n="h_about">Обо мне</h2>
+      <p data-i18n="p_about1">
+        Здравствуйте! Меня зовут Матвей, я разработчик и автор видео. Имею
+        опыт веб-разработки и создания программного обеспечения более чем на
+        10 различных языках.
+      </p>
+      <p data-i18n="p_about2">
+        Занимаюсь разработкой с 7 класса. Именно тогда я написал первую
+        программу. С тех пор увлечение переросло в профессию. Получая опыт, я
+        сразу им делюсь: я веду YouTube-канал, на котором рассказываю о
+        программировании.
+      </p>
+    </section>
+    <section>
+      <h2 class="fa-crown" data-i18n="h_skills">Навыки</h2>
+      <ul>
+        <li class="fa-computer">
+          <span data-i18n="skills_soft">Разработка ПО</span>
+          <progress max="100" value="20">Intern</progress>
+        </li>
+        <li class="fa-puzzle-piece">
+          <span data-i18n="skills_games">Разработка игр</span>
+          <progress max="100" value="10">Beginner</progress>
+        </li>
+        <li class="fa-mobile-screen-button">
+          <span data-i18n="skills_mobile">Мобильная разработка</span>
+          <progress max="100" value="8">Beginner</progress>
+        </li>
+        <li class="fa-laptop-code">
+          <span data-i18n="skills_frontend">Веб-разработка: фронтенд</span>
+          <progress max="100" value="40">Junior</progress>
+        </li>
+        <li class="fa-database">
+          <span data-i18n="skills_backend">Веб-разработка: бэкенд</span>
+          <progress max="100" value="30">Junior</progress>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="fa-address-book" data-i18n="h_contacts">
+        Контакты
+      </h2>
+      <ul>
+        <li class="fa-globe">
+          <a href="https://bouhartsev.top/">https://bouhartsev.top/</a>
+        </li>
+        <li class="fa-envelope">
+          <a href="mailto:programmer@bouhartsev.top">programmer@bouhartsev.top</a>
+        </li>
+        <li class="fa-paper-plane">
+          <a href="//t.me/bouhartsev">@bouhartsev</a>
+        </li>
+      </ul>
+    </section>
+  </aside>
+  <main>
+    <section>
+      <h2 class="fa-briefcase" data-i18n="h_work">Опыт</h2>
+      <div class="exp_part">
+        <h3 data-i18n="h_work1">Фронтенд-разработчик (стажёр)</h3>
+        <div class="subtitles">
+          <span class="fa-city" data-i18n="work1_place">Кинопоиск (Яндекс)</span>
+          <span class="fa-calendar-days" data-i18n="work1_time">18 Окт 2022 - 27 Фев 2023</span>
+        </div>
+        <p data-i18n="work1_desc">
+          Стажировка с занятостью 30 часов в неделю в плеере онлайн-кинотеатра
+          Кинопоиска - стримингового сервиса с миллионной аудиторией. Работа с
+          кнопками, таймлайнами и другими управляющими элементами: поддержка,
+          развитие и создание новых функций.
         </p>
-        <p data-i18n="p_about2">
-          Занимаюсь разработкой с 7 класса. Именно тогда я написал первую
-          программу. С тех пор увлечение переросло в профессию. Получая опыт, я
-          сразу им делюсь: я веду YouTube-канал, на котором рассказываю о
-          программировании.
+      </div>
+      <div class="exp_part">
+        <h3 data-i18n="h_work2">Фронтенд-разработчик</h3>
+        <div class="subtitles">
+          <span class="fa-city" data-i18n="work2_place">Яндекс.Еда</span>
+          <span class="fa-calendar-days" data-i18n="work2_time">7 марта 2023 - Сейчас</span>
+        </div>
+        <p data-i18n="work2_desc">
+          Фултайм-работа в hитейле: разработка интерфейсов для сотрудников,
+          связанных с продажами в сервисе "Яндекс.Еда". Развитие модулей для админ-панелей, в основном - B2B сектор.
         </p>
-      </section>
-      <section>
-        <h2 class="fa-crown" data-i18n="h_skills">Навыки</h2>
-        <ul>
-          <li class="fa-computer">
-            <span data-i18n="skills_soft">Разработка ПО</span>
-            <progress max="100" value="20">Intern</progress>
-          </li>
-          <li class="fa-puzzle-piece">
-            <span data-i18n="skills_games">Разработка игр</span>
-            <progress max="100" value="10">Beginner</progress>
-          </li>
-          <li class="fa-mobile-screen-button">
-            <span data-i18n="skills_mobile">Мобильная разработка</span>
-            <progress max="100" value="8">Beginner</progress>
-          </li>
-          <li class="fa-laptop-code">
-            <span data-i18n="skills_frontend">Веб-разработка: фронтенд</span>
-            <progress max="100" value="40">Junior</progress>
-          </li>
-          <li class="fa-database">
-            <span data-i18n="skills_backend">Веб-разработка: бэкенд</span>
-            <progress max="100" value="30">Junior</progress>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h2 class="fa-address-book" data-i18n="h_contacts">
-          Свяжитесь со мной!
-        </h2>
-        <ul>
-          <li class="fa-globe">
-            <a href="https://bouhartsev.top/">https://bouhartsev.top/</a>
-          </li>
-          <li class="fa-envelope">
-            <a href="mailto:programmer@bouhartsev.top"
-              >programmer@bouhartsev.top</a
-            >
-          </li>
-          <li class="fa-paper-plane">
-            <a href="//t.me/bouhartsev">@bouhartsev</a>
-          </li>
-        </ul>
-      </section>
-    </aside>
-    <main>
-      <section>
-        <h2 class="fa-briefcase" data-i18n="h_work">Опыт</h2>
-        <div class="exp_part">
-          <h3 data-i18n="h_work1">Фронтенд-разработчик (стажёр)</h3>
-          <div class="subtitles">
-            <span class="fa-city" data-i18n="work1_place"
-              >Кинопоиск (Яндекс)</span
-            ><span class="fa-calendar-days" data-i18n="work1_time"
-              >18 Окт 2022 - 27 Фев 2023</span
-            >
-          </div>
-          <p data-i18n="work1_desc">
-            Стажировка с занятостью 30 часов в неделю в плеере онлайн-кинотеатра
-            Кинопоиска - стримингового сервиса с миллионной аудиторией. Работа с
-            кнопками, таймлайнами и другими управляющими элементами: поддержка,
-            развитие и создание новых функций.
-          </p>
+      </div>
+    </section>
+    <section>
+      <h2 class="fa-graduation-cap" data-i18n="h_edu">Образование</h2>
+      <div class="exp_part">
+        <h3 data-i18n="h_edu1">Общее среднее</h3>
+        <div class="subtitles">
+          <span class="fa-school" data-i18n="edu1_place">Школа самоопределения</span>
+          <span class="fa-calendar-days" data-i18n="edu1_time">1 Сен 2009 - 19 Июля 2020</span>
         </div>
-        <div class="exp_part">
-          <h3 data-i18n="h_work2">Фронтенд-разработчик</h3>
-          <div class="subtitles">
-            <span class="fa-city" data-i18n="work2_place">Яндекс.Еда</span
-            ><span class="fa-calendar-days" data-i18n="work2_time"
-              >7 марта 2023 - Сейчас</span
-            >
-          </div>
-          <p data-i18n="work2_desc">
-            Фултайм-работа в Ритейле: разработка интерфейсов для сотрудников,
-            связанных с продажами в сервисе "Яндекс.Еда".
-          </p>
+        <p data-i18n="edu1_desc">
+          Я закончил школу с высшими оценками, красным аттестатом и двумя
+          золотыми медалями. Во время обучения был одним из лучших в своём
+          классе. Старался развиваться в разных сферах, улучшая хард-скилы на
+          олимпиадах и софт-скилы в организации общешкольных мероприятий.
+        </p>
+      </div>
+      <div class="exp_part">
+        <h3 data-i18n="h_edu2">высшее (бакалавриат)</h3>
+        <div class="subtitles">
+          <span class="fa-school" data-i18n="edu2_place">Московский Политех</span>
+          <span class="fa-calendar-days" data-i18n="edu2_time">1 Сен 2020 - Сейчас</span>
         </div>
-      </section>
-      <section>
-        <h2 class="fa-graduation-cap" data-i18n="h_edu">Образование</h2>
-        <div class="exp_part">
-          <h3 data-i18n="">Общее среднее</h3>
-          <div class="subtitles">
-            <span class="fa-school" data-i18n="">Школа самоопределения</span
-            ><span class="fa-calendar-days" data-i18n="">1 Сен 2009 - 19 Июля 2020</span>
-          </div>
-          <p data-i18n="">
-            Я закончил школу с высшими оценками, красным аттестатом и двумя
-            золотыми медалями. Во время обучения был одним из лучших в своём
-            классе. Старался развиваться в разных сферах, улучшая хард-скилы на
-            олимпиадах и софт-скилы в организации общешкольных мероприятий.
-          </p>
-        </div>
-        <div class="exp_part">
-          <h3>высшее (бакалавриат)</h3>
-          <div class="subtitles">
-            <span class="fa-school" data-i18n="">Московский Политех</span
-            ><span class="fa-calendar-days" data-i18n="">1 Сен 2020 - Сейчас</span>
-          </div>
-          <p data-i18n="">
-            Сейчас я учусь в Московском политехническом университете, на
-            факультете информационных технологий, по специальности "Информатика
-            и вычислительная техника" (программа "Веб-технологии"). Моё
-            стремление к саморазвитию помогло и здесь: мои оценки по результатам
-            сессий практически все являются пятёрками. Средняя оценка: 4.7+.
-          </p>
-        </div>
-      </section>
-      <section>
-        <h2 class="fa-earth-americas" data-i18n="h_langs">Языки</h2>
-      </section>
-    </main>
-  </body>
+        <p data-i18n="edu2_desc">
+          Сейчас я учусь в Московском политехническом университете, на
+          факультете информационных технологий, по специальности "Информатика
+          и вычислительная техника" (программа "Веб-технологии"). Моё
+          стремление к саморазвитию помогло и здесь: мои оценки по результатам
+          сессий практически все являются пятёрками.
+        </p>
+      </div>
+    </section>
+    <section>
+      <h2 class="fa-earth-americas" data-i18n="h_langs">Языки</h2>
+      <ul>
+        <li data-i18n="langs1">Английский</li>
+        <li data-i18n="langs2">Русский</li>
+      </ul>
+    </section>
+  </main>
+</body>
+
 </html>

@@ -51,7 +51,7 @@ aside {
     padding: 50px 100px;
 }
 
-aside>section {
+section {
     margin-bottom: 100px;
 }
 
@@ -151,6 +151,7 @@ progress {
 progress::-webkit-progress-bar {
     background: var(--white);
 }
+
 progress::-webkit-progress-value {
     background-color: var(--fg-light);
     border-radius: 1em;
@@ -190,10 +191,15 @@ h3 {
     margin-bottom: 0.5em;
 }
 
+h3~p {
+    margin-top: 0.5em;
+}
+
 .subtitles {
     width: 100%;
     display: flex;
 }
+
 .subtitles>* {
     flex: 1 1 100%;
 }
@@ -207,6 +213,7 @@ h3 {
 }
 
 @media print {
+
     /* styles to expand background to all page */
     body {
         margin: 0;
