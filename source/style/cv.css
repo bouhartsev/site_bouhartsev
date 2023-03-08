@@ -174,7 +174,7 @@ h3 {
 }
 
 h3~p {
-    margin-top: 0.5em;
+    margin: 0.5em 0;
 }
 
 .subtitles {
@@ -188,6 +188,16 @@ h3~p {
 
 .subtitles [class*="fa-"]::before {
     padding: 0;
+}
+
+[data-what] {
+    position: relative;
+}
+
+[data-what]::before {
+    content: attr(data-what) ":";
+    font-weight: bold;
+    margin-right: 0.5em;
 }
 
 .langs figure {

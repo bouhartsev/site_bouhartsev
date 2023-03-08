@@ -52,9 +52,10 @@ window.i18n = {
       if (element.dataset.i18n_target) {
         if (isDefaultNeeded)
           this.defaultI18N[element.dataset.i18n] =
-            element[element.dataset.i18n_target];
+            element.getAttribute(element.dataset.i18n_target);
+
         // to replace image src and etc.
-        element[element.dataset.i18n_target] = i18nLangs[element.dataset.i18n];
+        element.setAttribute(element.dataset.i18n_target, i18nLangs[element.dataset.i18n]);
       } else {
         if (isDefaultNeeded)
           this.defaultI18N[element.dataset.i18n] = !!element.placeholder
@@ -253,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
         String(i18n.currentLang !== i18n.defaultLang)
       )
     )
-    .catch(() => window.i18n.setLang(new_value === false ? "en" : "ru"));
+    .catch(() => window.i18n.setLang(i18n.defaultLang));
   // change_lang?.setAttribute(
   //   "aria-checked",
   //   String(i18n.currentLang !== i18n.defaultLang)
