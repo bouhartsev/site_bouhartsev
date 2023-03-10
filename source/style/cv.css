@@ -89,9 +89,10 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
+    margin-bottom: 0.1em;
 }
 
-[class*="fa-"]::before {
+h2[class*="fa-"]::before {
     color: var(--white);
     background-color: var(--fg-dark);
 }
@@ -188,7 +189,7 @@ h3~p {
     flex: 1 1 100%;
 }
 
-.subtitles [class*="fa-"]::before {
+.subtitles [class*="fa-"]::before, .langs [class*="fa-"]::before {
     padding: 0;
 }
 
@@ -202,57 +203,26 @@ h3~p {
     margin-right: 0.5em;
 }
 
-.langs figure {
-    --star-size: 1.5rem;
-
-    display: inline-block;
-    width: 20%;
-    margin: var(--star-size) 0 1em var(--padding-size);
+.langs {
+    display: grid;
+    grid-template-columns: auto auto auto;
     text-align: center;
-    vertical-align: top;
+    gap: 1em;
 }
 
-.langs img {
-    border-radius: 5%;
-    border: 5px solid var(--fg-dark);
-}
-
-.langs figcaption {
-    --stars: 0;
-
-    position: relative;
-    font-size: 1.125rem;
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-}
-
-.langs figcaption::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: calc(-1 * var(--star-size) - 0.5rem);
-    transform: translateX(-50%);
-
-    height: var(--star-size);
-    width: calc(var(--star-size) * var(--stars));
-    background: url("/source/img/star.svg");
-    background-size: var(--star-size)  var(--star-size);
-
+.langs>* {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
     /* width: 20%; */
 }
-
-.langs figcaption::before {
-    content: attr(data-level);
-    position: absolute;
-    left: 50%;
-    top: calc(-1 * var(--star-size) - 1.5rem);
-    transform: translateX(-50%);
-
-    padding: 0.5em;
-    background: var(--fg-light);
+.langs>* span:first-child {
+    background-color: var(--fg-light);
     color: var(--white);
+    padding: 0.25em;
     border-radius: 0.25em;
 }
+
 
 @media print {
     #change_lang {
