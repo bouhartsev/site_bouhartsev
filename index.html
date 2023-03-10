@@ -167,7 +167,6 @@
         "https://mc.yandex.ru/metrika/tag.js",
         "ym"
       );
-
       ym(72355396, "init", {
         clickmap: true,
         trackLinks: true,
@@ -227,7 +226,7 @@
     <!-- </aside> -->
     <main>
       <section id="about" class="about">
-        <div class="about_text">
+        <div class="about_text" data-i18n="about">
           <p>
             <strong>Матвей Бухарцев</strong> - российский программист и автор
             видео. Имеет опыт веб-разработки и создания программного обеспечения
@@ -258,7 +257,7 @@
         <h2 data-i18n="h_contacts">Контакты</h2>
         <div class="table">
           <div>
-            <span>Программист</span>
+            <span data-i18n="contacts_dev">Программист</span>
             <a
               href="mailto:programmer@bouhartsev.top"
               class="link_uni_cont fa-envelope-open-text"
@@ -267,7 +266,7 @@
             >
           </div>
           <div>
-            <span>Автор видео</span>
+            <span data-i18n="contacts_movie">Автор видео</span>
             <a
               href="mailto:moviemaker@bouhartsev.top"
               class="link_uni_cont fa-envelope"
@@ -276,7 +275,7 @@
             >
           </div>
           <div>
-            <span>По остальным вопросам</span>
+            <span data-i18n="contacts_else">По остальным вопросам</span>
             <a
               href="mailto:main@bouhartsev.top"
               class="link_uni_cont fa-envelope-open"
@@ -285,7 +284,7 @@
             >
           </div>
           <div>
-            <span>Для Google-коммуникаций</span>
+            <span data-i18n="contacts_google">Для Google-коммуникаций</span>
             <a
               href="mailto:bouhartsev@gmail.com"
               class="link_uni_cont fa-google"
@@ -294,7 +293,7 @@
             >
           </div>
           <div>
-            <span>VKонтакте</span>
+            <span data-i18n="contacts_vk">ВКонтакте</span>
             <a
               href="//vk.com/bouhartsev"
               class="link_uni_cont fa-vk"
@@ -368,38 +367,39 @@
 			<li data-cv-lang="EN"><a href="!!!" class="link_uni">Резюме (общее)</a></li> -->
           <li>
             <a
-              href="/source/files/Bouhartsev_CV_programmer_ru.pdf"
+              href="/programmer/cv/?lang=ru"
               target="_blank"
               class="link_uni_cont"
               data-cv-lang="RU"
-              ><span>Резюме (программист)</span></a
+              ><span data-i18n="cv_dev">Резюме (программист)</span></a
             >
           </li>
           <li>
             <a
-              href="/source/files/Bouhartsev_CV_programmer_en.pdf"
+              href="/programmer/cv/?lang=en"
               target="_blank"
               class="link_uni_cont"
               data-cv-lang="EN"
-              ><span>Резюме (программист)</span></a
+              ><span data-i18n="cv_dev">Резюме (программист)</span></a
             >
           </li>
           <li>
             <a class="link_uni_cont" data-cv-lang="RU"
-              ><span>Резюме (автор видео)</span></a
+              ><span data-i18n="cv_movie">Резюме (автор видео)</span></a
             >
           </li>
           <li>
             <a class="link_uni_cont" data-cv-lang="EN"
-              ><span>Резюме (автор видео)</span></a
+              ><span data-i18n="cv_movie">Резюме (автор видео)</span></a
             >
           </li>
         </ul>
       </section>
 
-      <section id="news">
+      <!-- <noindex> -->
+      <!-- <section id="news">
         <h2>Последние новости</h2>
-        <!-- Social media -->
+
         <div class="feed-block">
           <div id="vk_feed" class="sm-feed"></div>
           <div class="sm-feed2">
@@ -415,13 +415,17 @@
             href="https://twitter.com/bouhartsev?ref_src=twsrc%5Etfw"
             >Tweets by bouhartsev</a
           >
-        </div>
-        <!-- <div class="sm-feed3"><div class="elfsight-app-2ac1c4c3-97f4-4a4c-b166-bd45b58aacfe"></div></div> -->
-        <!-- <div class="sm-feed3"><div class="elfsight-app-2ac1c4c3-97f4-4a4c-b166-bd45b58aacfe"></div></div> -->
-        <div class="sm-feed4">
+        </div> -->
+
+      <!-- Already commented -->
+      <!-- <div class="sm-feed3"><div class="elfsight-app-2ac1c4c3-97f4-4a4c-b166-bd45b58aacfe"></div></div> -->
+      <!-- <div class="sm-feed3"><div class="elfsight-app-2ac1c4c3-97f4-4a4c-b166-bd45b58aacfe"></div></div> -->
+
+      <!-- <div class="sm-feed4">
           <div class="elfsight-app-5eb453a3-04e0-4011-8ee3-a0831d2ad2c5"></div>
         </div>
-      </section>
+      </section> -->
+      <!-- </noindex> -->
     </main>
 
     <footer>

@@ -14,6 +14,7 @@
     "skills_backend": "Backend Web Development",
     "h_contacts": "Contact me",
     "h_work": "Work experience",
+    "work_stack": "Stack",
     "h_work1": "Frontend Intern",
     "work1_place": "Kinopoisk (Yandex)",
     "work1_time": "18 Oct 2022 - 27 Feb 2023",
@@ -32,6 +33,8 @@
     "edu2_time": "1 Sep 2020 - Current",
     "edu2_desc": "Currently I am studying at the Moscow Polytech, at the Faculty of Information Technologies, majoring in Computer Science and Computer Engineering (Web Technologies program). My desire for self-development also helped here: the grade point average, based on the exams, tends to the highest mark (5).",
     "h_langs": "Languages",
-    "langs1": "English",
-    "langs2": "Russian"
+    "lang1_title": "English",
+    "lang1_level": "Intermediate",
+    "lang2_title": "Russian",
+    "lang2_level": "Native"
 }

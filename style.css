@@ -93,7 +93,7 @@ section {
 	line-height: 1.5em;
 }
 
-#cv a.link_uni_cont::before {
+/* #cv a.link_uni_cont::before {
 	content: "";
 	width: 1em;
 	height: 1.25em;
@@ -104,7 +104,7 @@ section {
 	background-size: 100% auto;
 	background-position: bottom;
 	vertical-align: top;
-}
+} */
 
 #cv a.link_uni_cont::after {
 	display: inline;
