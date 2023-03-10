@@ -91,7 +91,7 @@ h2 {
     font-size: 1.5rem;
 }
 
-h2[class*="fa-"]::before {
+[class*="fa-"]::before {
     color: var(--white);
     background-color: var(--fg-dark);
 }
@@ -120,7 +120,7 @@ li {
     position: relative;
 }
 
-.skills li {
+.with-progress li {
     margin-bottom: 3em;
 }
 
@@ -129,7 +129,9 @@ li[class*="fa-"]::before {
     top: 50%;
     left: calc(-1 * var(--padding-size));
     transform: translate(15%, -50%);
+}
 
+aside li[class*="fa-"]::before {
     color: var(--fg-dark);
     background-color: var(--white);
 }
@@ -201,9 +203,11 @@ h3~p {
 }
 
 .langs figure {
+    --star-size: 1.5rem;
+
     display: inline-block;
     width: 20%;
-    margin: 0 0 1em var(--padding-size);
+    margin: var(--star-size) 0 1em var(--padding-size);
     text-align: center;
     vertical-align: top;
 }
@@ -223,7 +227,6 @@ h3~p {
 }
 
 .langs figcaption::after {
-    --star-size: 1.5rem;
     content: "";
     position: absolute;
     left: 50%;
@@ -236,6 +239,19 @@ h3~p {
     background-size: var(--star-size)  var(--star-size);
 
     /* width: 20%; */
+}
+
+.langs figcaption::before {
+    content: attr(data-level);
+    position: absolute;
+    left: 50%;
+    top: calc(-1 * var(--star-size) - 1.5rem);
+    transform: translateX(-50%);
+
+    padding: 0.5em;
+    background: var(--fg-light);
+    color: var(--white);
+    border-radius: 0.25em;
 }
 
 @media print {
