@@ -1,33 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
-
+document.addEventListener("DOMContentLoaded", function () {
 	// YouTube adaptive
 
-    function YouTubeVideoHeight() {
-		document.querySelectorAll('#videos iframe').forEach(elem => elem.height=''+(elem.offsetWidth / 1.777));
-    }
+	function YouTubeVideoHeight() {
+		document
+			.querySelectorAll("#videos iframe")
+			.forEach((elem) => (elem.height = "" + elem.offsetWidth / 1.777));
+	}
 
-    YouTubeVideoHeight();
-    window.addEventListener('resize', YouTubeVideoHeight);
+	YouTubeVideoHeight();
+	window.addEventListener("resize", YouTubeVideoHeight);
 
 	// ------------------------------------------------------------------------------- //
 
-    // Печатная машинка
+	// Печатная машинка
 
-    let CharTimeout = 50; // скорость печатания
+	let CharTimeout = 50; // скорость печатания
 	let DefTimeout = 2000; // время ожидания перед переключением
-	
-	// Список определений
-	let Summaries = new Array();
-	Summaries = ['программист',
-		'разработчик',
-		'веб-разработчик',
-		'фулстек-разработчик',
-		'фронтенд-разработчик',
-		'бэкенд-разработчик',
-		'разработчик консольных приложений',
-		'.NET-разработчик'];
+	let CurrentTimeout; // Текущий таймер
 
-	let massiveItemCount = Number(Summaries.length); //количество элементов массива
+	// Список определений
+	let Summaries = [];
+	// Rоличество элементов массива
+	let massiveItemCount = 0;
 	// Определяем значения запуска
 	let CurrentDef = -1;
 	let CurrentLength = 0;
@@ -35,74 +29,96 @@ document.addEventListener("DOMContentLoaded", function() {
 	let AnchorObject = document.getElementById("typewriter");
 
 	// Генератор подстановки знака
-	function znak(){
+	function znak() {
 		if (CurrentLength == DefSummary.length) return "";
 		else return "|";
 	}
 
-    let adding;
+	let adding;
+
 	// Основной цикл тиккера
-	function runTheTypewriter(){
+	function runTheTypewriter() {
 		let myTimeout;
 
 		// Переход к следующему элементу
-		if (CurrentLength == 0){
-            adding = true;
+		if (CurrentLength == 0) {
+			adding = true;
 			CurrentDef++;
 			CurrentDef = CurrentDef % massiveItemCount;
-			DefSummary = Summaries[CurrentDef].replace(/"/g,'-');
+			DefSummary = Summaries[CurrentDef].replace(/"/g, "-");
 		}
 		// Располагаем текущий текст с печатанием
-		AnchorObject.innerHTML = DefSummary.substring(0,CurrentLength) + znak();
+		AnchorObject.innerHTML = DefSummary.substring(0, CurrentLength) + znak();
 		// Преобразуем длину для подстроки и определяем таймер
-		if(CurrentLength != DefSummary.length){
+		if (CurrentLength != DefSummary.length) {
 			if (adding) CurrentLength++;
-		    else CurrentLength--;
-            myTimeout = CharTimeout;
+			else CurrentLength--;
+			myTimeout = CharTimeout;
+		} else {
+			adding = false;
+			myTimeout = DefTimeout;
+			CurrentLength--;
 		}
-        else {
-            adding = false;
-            myTimeout = DefTimeout;
-            CurrentLength--;
-        }
 		// Повторяем цикл с учетом задержки
-		setTimeout(runTheTypewriter, myTimeout);
+		CurrentTimeout = setTimeout(runTheTypewriter, myTimeout);
 	}
 
-	runTheTypewriter();
+	function setupTheTypewriter() {
+		Summaries = JSON.parse(
+			AnchorObject
+				?.getAttribute("data-array")
+				?.replace(/[']/g, '"') || ""
+		);
+		massiveItemCount = Number(Summaries?.length);
+		CurrentLength = 0;
+		CurrentTimeout && clearTimeout(CurrentTimeout);
+		runTheTypewriter();
+	}
+
+	window.i18n?.toLaunchAfter?.push(setupTheTypewriter);
+
+	setupTheTypewriter();
 
 	// ------------------------------------------------------------------------------- //
 
 	async function getPinnedProjects(username) {
 		// fetch('https://gh-pinned-repos-5l2i19um3.vercel.app/?username='+username).then(response => {console.log(response.results())});
-		let response = await fetch('https://gh-pinned-repos.egoist.sh/?username='+username);
-		if (response.ok) { // если HTTP-статус в диапазоне 200-299
+		let response = await fetch(
+			"https://gh-pinned-repos.egoist.sh/?username=" + username
+		);
+		if (response.ok) {
+			// если HTTP-статус в диапазоне 200-299
 			let json = await response.json();
 			return json;
-		}
-		else {
+		} else {
 			console.log("Ошибка HTTP: " + response.status);
-			return []
+			return [];
 		}
 	}
-	getPinnedProjects('bouhartsev').then((projects) => {
-		let parent = document.createElement('ul');
-		parent.classList.add('cards');
-		let element=null;
+	getPinnedProjects("bouhartsev").then((projects) => {
+		let parent = document.createElement("ul");
+		parent.classList.add("cards");
+		let element = null;
 		for (project of projects) {
-			let card = '';
+			let card = "";
 			// if (project['repo']) card += '<strong><a href="#project_'+project['repo']+'" class="link_color">'+project['repo']+'</a></strong>';
-			if (project['repo']) card += '<strong><a href="https://github.com/bouhartsev/'+project['repo']+'" class="link_uni">'+project['repo']+'</a></strong>';
-			if (project['description']) card += '<p>'+project['description']+'</p>';
-			if (project['language']) card += '<span>'+project['language']+'</span>';
-			element = document.createElement('li');
+			if (project["repo"])
+				card +=
+					'<strong><a href="https://github.com/bouhartsev/' +
+					project["repo"] +
+					'" class="link_uni">' +
+					project["repo"] +
+					"</a></strong>";
+			if (project["description"])
+				card += "<p>" + project["description"] + "</p>";
+			if (project["language"])
+				card += "<span>" + project["language"] + "</span>";
+			element = document.createElement("li");
 			element.innerHTML = card;
 			parent.append(element);
 		}
-		document.querySelector('#projects>a').before(parent);
-	})
-
+		document.querySelector("#projects>a").before(parent);
+	});
 
 	// ------------------------------------------------------------------------------- //
-
 });

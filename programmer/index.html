@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-i18n="meta_lang" data-i18n_target="lang">
   <head>
     <meta charset="utf-8" />
 
-    <title>Матвей Бухарцев - это программист</title>
+    <title data-i18n="meta_title">Матвей Бухарцев - это программист</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1a1a1a" />
@@ -30,12 +30,16 @@
     </noscript>
 
     <header>
-      <h1><a href="/">Матвей Бухарцев - это</a></h1>
+      <h1><a href="/" data-i18n="header_MBis">Матвей Бухарцев - это</a></h1>
       <nav>
         <ul>
-          <li><a href="/">кто?</a></li>
-          <li><a href="/programmer/">программист</a></li>
-          <li><a href="/moviemaker/">автор видео</a></li>
+          <li><a href="/" data-i18n="header_who">кто?</a></li>
+          <li>
+            <a href="/programmer/" data-i18n="header_programmer">программист</a>
+          </li>
+          <li>
+            <a href="/moviemaker/" data-i18n="header_moviemaker">автор видео</a>
+          </li>
         </ul>
         <div class="header__burger" id="burger">
           <span></span>
@@ -45,7 +49,7 @@
 
     <main>
       <section id="about" class="about">
-        <div class="about_text">
+        <div class="about_text" data-i18n="about">
           <p>
             <strong>Матвей Бухарцев</strong> занимается разработкой с 7 класса.
             Именно тогда он написал первую программу на Паскале. С тех пор
@@ -55,7 +59,11 @@
             Матвей сразу его передаёт: он ведёт YouTube-канал, на котором
             рассказывает о программировании.
           </p>
-          <p>Сейчас Матвей проходит стажировку на позиции фронтенд-разработчика в "Кинопоиске" (Яндекс).</p>
+          <p>
+            Сейчас Матвей работает в Яндексе: после стажировки в
+            <b>Кинопоиске</b> он устроился на вакансию фронтенд-разработчика в
+            <b>Яндекс.Еде</b>.
+          </p>
         </div>
         <img
           src="/source/img/programmer.jpg"
@@ -65,11 +73,19 @@
       </section>
 
       <section id="facets">
-        Я - <span id="typewriter">программист</span>
+        <span data-i18n="facets_me">Я -</span>&nbsp;<span
+          id="typewriter"
+          data-array="['программист', 'разработчик', 'веб-разработчик', 'фулстек-разработчик', 'фронтенд-разработчик', 'бэкенд-разработчик', 'разработчик консольных приложений', '.NET-разработчик']"
+          data-i18n="facets_who"
+          data-i18n_target="data-array"
+          >программист</span
+        >
       </section>
 
       <section id="lang_prog">
-        <h2>Языки разработки, которыми владеет Матвей Бухарцев</h2>
+        <h2 data-i18n="h_skills">
+          Языки разработки, которыми владеет Матвей Бухарцев
+        </h2>
         <input type="checkbox" name="levels_visible" hidden />
         <div class="levels_prog">
           <label for="levels_visible"></label>
@@ -133,22 +149,25 @@
       </section>
 
       <section id="projects">
-        <h2>Проекты</h2>
+        <h2 data-i18n="h_projects">Проекты</h2>
         <!-- <p>Скоро здесь будет список разработок Матвея Бухарцева, а пока - <a href="//github.com/bouhartsev" class="link_uni" target="_blank">ссылка на GitHub</a>.</p> -->
         <!-- <a href="./projects/">Все проекты</a> -->
         <a
           href="https://github.com/bouhartsev"
           class="link_projects"
           target="_blank"
+          data-i18n="projects_link"
           >Все проекты</a
         >
       </section>
 
       <section id="videos">
-        <h2>Заметки программиста</h2>
+        <h2 data-i18n="h_videos">Заметки программиста</h2>
         <p>
-          Влог о программах и сайтах: разборы, туториалы, обучения по написанию,
-          обзоры и многое другое.
+          <span data-i18n="videos_about"
+            >Влог о программах и сайтах: разборы, туториалы, обучения по
+            написанию, обзоры и многое другое.</span
+          >
           <a
             href="https://youtube.com/playlist?list=PLHPj2lb9CyAHXsEr0uDNIZeZg_lkVA_5x"
             class="link_uni"
@@ -182,8 +201,8 @@
     </main>
 
     <footer>
-      <a href="/#contacts">Контакты</a>
-      <a href="/sitemap">Карта сайта</a>
+      <a href="/#contacts" data-i18n="h_contacts">Контакты</a>
+      <a href="/sitemap" data-i18n="h_sitemap">Карта сайта</a>
       <div id="copyright">© Matvey Bouhartsev, 2023</div>
     </footer>
   </body>
