@@ -3,7 +3,8 @@ window.i18n = {
   defaultLang: "ru", // language of the HTML page
   defaultI18N: null, // object with default content
   currentLang: "", // set default other then lang on page
-  langPath: "./",
+  langPaths: ["/source/common_translate/", "./"], // paths of json files
+  toLaunchAfter: [], // array of functions that should be invoked after successfull translation
 
   setLang(new_lan = null) {
     // order: param -> localStorage -> browser
@@ -36,12 +37,18 @@ window.i18n = {
     return lang;
   },
 
-  _getLangUrl() {
-    return this.langPath + this.currentLang + ".json";
+  _getLangUrls() {
+    return this.langPaths.map((path) => path + this.currentLang + ".json");
   },
 
   replaceLang(i18nLangs) {
-    if (!i18nLangs) return Promise.reject();
+    console.log(i18nLangs);
+    if (
+      !i18nLangs ||
+      typeof i18nLangs !== "object" ||
+      Object.keys(i18nLangs).length === 0
+    )
+      return Promise.reject();
     const isDefaultNeeded =
       this.currentLang != this.defaultLang && !this.defaultI18N;
     if (isDefaultNeeded) this.defaultI18N = new Object();
@@ -51,11 +58,15 @@ window.i18n = {
 
       if (element.dataset.i18n_target) {
         if (isDefaultNeeded)
-          this.defaultI18N[element.dataset.i18n] =
-            element.getAttribute(element.dataset.i18n_target);
+          this.defaultI18N[element.dataset.i18n] = element.getAttribute(
+            element.dataset.i18n_target
+          );
 
         // to replace image src and etc.
-        element.setAttribute(element.dataset.i18n_target, i18nLangs[element.dataset.i18n]);
+        element.setAttribute(
+          element.dataset.i18n_target,
+          i18nLangs[element.dataset.i18n]
+        );
       } else {
         if (isDefaultNeeded)
           this.defaultI18N[element.dataset.i18n] = !!element.placeholder
@@ -70,6 +81,8 @@ window.i18n = {
         }
       }
     });
+
+    this.launchAfter();
   },
 
   fetchLang() {
@@ -81,12 +94,25 @@ window.i18n = {
       return Promise.resolve();
     } else if (!!this.defaultI18N) this.defaultI18N = null;
 
-    return fetch(this._getLangUrl()).then((response) =>
-      response.json().then((res) => {
-        this.replaceLang(res);
-      })
-    );
+    return Promise.allSettled(
+      this._getLangUrls().map((url) => fetch(url))
+    ).then((responses) => {
+      return Promise.all(
+        responses
+          .filter((res) => !!res?.value && res.value.ok)
+          .map((res) => res.value.json())
+      )
+        .then((results) =>
+          this.replaceLang(
+            results.reduce((acc, val) => ({ ...acc, ...val }), {})
+          )
+        )
+    });
     // .catch((err) => console.error(err));
+  },
+
+  launchAfter() {
+    return this.toLaunchAfter?.forEach((fn) => fn?.());
   },
 };
 
@@ -194,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
         el.classList.toggle("burger-active"); // проблема - при увеличении высоты экрана вручную видно страницу снизу
       });
   }
-  
+
   isBurger();
   window.addEventListener("resize", isBurger);
   document.querySelector("#burger")?.addEventListener("click", clickBurger);
