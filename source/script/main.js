@@ -42,7 +42,6 @@ window.i18n = {
   },
 
   replaceLang(i18nLangs) {
-    console.log(i18nLangs);
     if (
       !i18nLangs ||
       typeof i18nLangs !== "object" ||
@@ -220,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
         el.classList.toggle("burger-active"); // проблема - при увеличении высоты экрана вручную видно страницу снизу
       });
   }
-
+  
   isBurger();
   window.addEventListener("resize", isBurger);
   document.querySelector("#burger")?.addEventListener("click", clickBurger);
