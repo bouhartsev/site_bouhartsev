@@ -9,5 +9,38 @@
 <body>
     <p>Projects list is not ready yet.</p>
     <a href="/programmer/">Go back</a>
+    <!-- 
+        {
+            "projects": [
+                {
+                    "id": "slug1", // from github "name"
+                    "description": "Description 1", // from github "description"
+                    "name": "Project 1", // from github readme (async)
+                    "description_md": "Description 1", // from github readme (async), fallback to description
+                    "technologies": [ // from github "topics"
+                        "go",
+                        "mobx",
+                        "mui",
+                        "react",
+                        "typescript"
+                    ],
+                    "link": "//bouhartsev.top",
+                    "source": "//github.com/bouhartsev/site_bouhartsev",
+                    // add more fields here
+                    "status": "active", // from github "archived"
+                    "created_at": "2021-01-01 00:00:00", // Начало работы
+                    "updated_at": "2021-01-01 00:00:00" // Последнее обновление (если отсутствует и статус активный - сегодня)
+                },
+                {
+                    "id": "slug2",
+                    "name": "Project 2",
+                    "description": "Description 2",
+                    "status": "archived",
+                    "created_at": "2021-01-01 00:00:00",
+                    "updated_at": "2021-01-01 00:00:00"
+                }
+            ]
+        }
+     -->
 </body>
 </html>
