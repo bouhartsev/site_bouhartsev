@@ -3,3 +3,8 @@
 My personal website
 
 [![SM img](source/img/sm_img.png)](https://bouhartsev.top)
+
+## Techonologies used
+- FontAwesome
+- force-graph
+- GitHub API

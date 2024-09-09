@@ -269,6 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
       data-i18n_target="title"
     ><span>RU</span><span>EN</span></button>
   `;
+  // TODO: get default lang from html lang
   const change_lang = temp.firstElementChild;
   window.i18n.setLang();
   window.i18n
